@@ -1,27 +1,22 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inscription</title>
-    <link rel="stylesheet" href="inscription.css">
+    <title>Connexion</title>
+    <link rel="stylesheet" href="./style/connexion.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
-
 <body>
     <header>
-        <h1><a href="../home/home.html">UpEvent</a></h1>
+    <h1><a href="/index.html">UpEvent</a></h1>
     </header>
 
-    <div class="form-card" id="form-card" method="POST">
-        <input type="text" id="prenom" name="prenom" placeholder="Prénom" required>
-        <input type="text" id="nom" name="nom" placeholder="Nom" required>
+    <div class="form-card" method="POST">
         <input type="email" id="email" name="email" placeholder="Email" required>
         <input type="password" id="password" name="password" placeholder="Mot de passe" required>
-        <button type="submit">S'inscrire</button>
+        <button type="submit">Connexion</button>
+        <a href="./resetPassword.html">Mot de passe oublié ?</a>
     </div>
-    <script src="inscription.js"></script>
 </body>
-
 </html>
