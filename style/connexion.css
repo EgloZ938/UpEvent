@@ -8,7 +8,8 @@ body{
 
 h1 a{
     top:2%;
-    left: 45%;
+    left: 50%; 
+    transform: translateX(-50%);
     position: fixed;
     text-decoration: none;  
     color: black;
@@ -26,7 +27,7 @@ a{
     border-radius: 25px;
     padding: 20px 30px 30px 30px;
     box-shadow: 0 5px 10px rgba(0 , 0, 0, 0.2);
-    
+    margin: 0 10px;
 }
 
 .form-card h2 {
