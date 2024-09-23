@@ -1,1 +1,1 @@
-# Voici le README de AssoUp modifier par Theo
+# Voici le README de AssoUp modifié par Théo
