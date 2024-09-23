@@ -1,0 +1,116 @@
+
+.fa-solid.fa-plus{
+    margin: 10px 0 0 10px;
+    font-size: 1.6rem;
+}
+
+h1 a{
+    top:2%;
+    left: 45%;
+    position: fixed;
+    text-decoration: none;  
+    color: black;
+}
+
+
+.buttons-container {
+   
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        left: auto;
+        display: flex;
+        gap: 15px;
+        z-index: 1000;
+    }
+
+
+
+.button {
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 8px 16px;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-block;
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #333;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.button:hover {
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+
+.button-signup {
+    background-color: #333;
+    color: #fff;
+}
+
+.button-signup:hover {
+    background-color: #444;
+}
+
+
+.button-login {
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #333;
+    border: 1px solid #ddd;
+}
+
+.button-login:hover {
+    background-color: #fff;
+}
+
+
+/** mobile */
+@media (min-width: 769px) {
+    .buttons-container {
+        display: flex;
+    }
+    .mobile-menu-button,
+    .mobile-menu {
+        display: none;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .buttons-container {
+        display: none;
+    }
+    .mobile-menu-button {
+        display: block;
+        position: fixed;
+        top: 14px;
+        right: 20px;
+        z-index: 1001;
+        background: none;
+        border: none;
+        font-size: 24px;
+        color: #333;
+    }
+    .mobile-menu {
+        display: none;
+        position: fixed;
+        top: 60px;
+        right: 20px;
+        background-color: white;
+        border-radius: 6px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        padding: 10px;
+    }
+    .mobile-menu.open {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+}
