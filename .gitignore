@@ -1,3 +1,4 @@
 *.log
 /db/MyPDO.php
+/db/connexion_inscription.php
 *~
