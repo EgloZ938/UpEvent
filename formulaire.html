@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proposition d'Événement</title>
+    <!-- Connexion au fichier CSS -->
+    <link rel="stylesheet" href="style/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h2>Créer un Événement</h2>
+        <form>
+            <!-- Titre -->
+            <label for="title">Titre</label>
+            <input type="text" id="title" name="title" placeholder="Entrez le titre de l'événement" required>
+
+            <!-- Description -->
+            <label for="description">Description</label>
+            <textarea id="description" name="description" placeholder="Décrivez l'événement" required></textarea>
+
+            <!-- Lieu -->
+            <label for="location">Lieu</label>
+            <input type="text" id="location" name="location" placeholder="Entrez le lieu de l'événement" required>
+
+            <!-- Date -->
+            <label for="date">Date</label>
+            <input type="date" id="date" name="date" required>
+
+            <button type="submit" class="submit-btn">Proposer l'événement</button>
+        </form>
+    </div>
+
+</body>
+
+</html>
