@@ -7,10 +7,13 @@
     <title>Proposition d'Événement</title>
     <!-- Connexion au fichier CSS -->
     <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <a href="index.php" class="arrow"><i class="fa-solid fa-angle-left fa-3x"></i></a>
 </head>
 
 <body>
     <div class="container">
+
         <h2>Créer un Événement</h2>
         <form>
             <!-- Titre -->
@@ -21,6 +24,34 @@
             <label for="description">Description</label>
             <textarea id="description" name="description" placeholder="Décrivez l'événement" required></textarea>
 
+            <!--Catégorie-->
+            <label for="categorie" style="text-align: center">Catégorie</label>
+            <div class="button-group">
+                <button type="button" class="button sport" onclick="selectEventType(this)">Sport</button>
+                <button type="button" class="button work" onclick="selectEventType(this)">Travail</button>
+                <button type="button" class="button entertainment" onclick="selectEventType(this)">Divertissement</button>
+                <button type="button" class="button other" onclick="selectEventType(this)">Autre</button>
+            </div>
+
+            <!--Script de sélection de bouton + changement de couleur -->
+            <script>
+                function selectEventType(button) {
+                    // Enlève la classe "selected" de tous les boutons
+                    const buttons = document.querySelectorAll('.button');
+                    buttons.forEach(btn => {
+                        btn.classList.remove('selected');
+                        // Réinitialise la couleur des boutons
+                        btn.style.backgroundColor = ""; // Réinitialise la couleur de fond
+                    });
+
+                    // Ajoute la classe "selected" et change la couleur de fond du bouton cliqué
+                    button.classList.add('selected');
+                    button.style.backgroundColor = "#700A36";
+                }
+            </script>
+
+
+
             <!-- Lieu -->
             <label for="location">Lieu</label>
             <input type="text" id="location" name="location" placeholder="Entrez le lieu de l'événement" required>
@@ -28,8 +59,12 @@
             <!-- Date -->
             <label for="date">Date</label>
             <input type="date" id="date" name="date" required>
-
             <button type="submit" class="submit-btn">Proposer l'événement</button>
+
+            <!-- Script JS animation
+            <script src="script/event_form.js"></script>
+            -->
+
         </form>
     </div>
 

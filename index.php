@@ -31,7 +31,7 @@ foreach($result as $row){
 </head>
 <body>
     <header>
-<i class="fa-solid fa-plus"></i>
+<a href="formulaire.html" class="croix"><i class="fa-solid fa-plus"></i></a>
 
 <h1><a href="./">UpEvent</a></h1>
 <?php
