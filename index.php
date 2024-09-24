@@ -38,7 +38,9 @@ foreach($result as $row){
     if($_SESSION["id"]){
         if($img == ''){
             ?>
+            <a href="./profil.html">
             <div id="profil" class="profil" style="background-image: url('./assets/avatar_default.png');"></div>
+        </a>
             <?php
         }
         else{
