@@ -31,14 +31,16 @@ foreach($result as $row){
 </head>
 <body>
     <header>
-<i class="fa-solid fa-plus"></i>
+<a href="formulaire.html" class="croix"><i class="fa-solid fa-plus"></i></a>
 
 <h1><a href="./">UpEvent</a></h1>
 <?php
     if($_SESSION["id"]){
         if($img == ''){
             ?>
+            <a href="./profil.html">
             <div id="profil" class="profil" style="background-image: url('./assets/avatar_default.png');"></div>
+        </a>
             <?php
         }
         else{
