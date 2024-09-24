@@ -15,10 +15,12 @@
     <div class="container">
 
         <h2>Créer un Événement</h2>
-        <form>
+        <form id="formulaire" method="post">
+
+            <input type="hidden" name="categorie" id="categorie-value">
             <!-- Titre -->
             <label for="title">Titre</label>
-            <input type="text" id="title" name="title" placeholder="Entrez le titre de l'événement" required>
+            <input type="text" id="titre" name="titre" placeholder="Entrez le titre de l'événement" required>
 
             <!-- Description -->
             <label for="description">Description</label>
@@ -29,28 +31,10 @@
             <div class="button-group">
                 <button type="button" class="button sport" onclick="selectEventType(this)">Sport</button>
                 <button type="button" class="button work" onclick="selectEventType(this)">Travail</button>
-                <button type="button" class="button entertainment" onclick="selectEventType(this)">Divertissement</button>
+                <button type="button" class="button entertainment"
+                    onclick="selectEventType(this)">Divertissement</button>
                 <button type="button" class="button other" onclick="selectEventType(this)">Autre</button>
             </div>
-
-            <!--Script de sélection de bouton + changement de couleur -->
-            <script>
-                function selectEventType(button) {
-                    // Enlève la classe "selected" de tous les boutons
-                    const buttons = document.querySelectorAll('.button');
-                    buttons.forEach(btn => {
-                        btn.classList.remove('selected');
-                        // Réinitialise la couleur des boutons
-                        btn.style.backgroundColor = ""; // Réinitialise la couleur de fond
-                    });
-
-                    // Ajoute la classe "selected" et change la couleur de fond du bouton cliqué
-                    button.classList.add('selected');
-                    button.style.backgroundColor = "#700A36";
-                }
-            </script>
-
-
 
             <!-- Lieu -->
             <label for="location">Lieu</label>
@@ -59,15 +43,18 @@
             <!-- Date -->
             <label for="date">Date</label>
             <input type="date" id="date" name="date" required>
+
+            <!-- heure -->
+            <label for="heure">Heure</label>
+            <input type="time" id="heure" name="heure" required>
+
+            <!-- Participants -->
+            <label for="participants">Nombre de participants</label>
+            <input type="number" id="participants" name="participants" min="1" required>
             <button type="submit" class="submit-btn">Proposer l'événement</button>
-
-            <!-- Script JS animation
-            <script src="script/event_form.js"></script>
-            -->
-
         </form>
     </div>
-
+    <script src="./script/evenement.js"></script>
 </body>
 
 </html>
