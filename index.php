@@ -4,6 +4,20 @@ session_start();
 if($_SESSION["id"]){
     $id_user = $_SESSION["id"];
 }
+
+$data = [
+    'id' => $id_user
+];
+
+$query = "SELECT * FROM utilisateur WHERE id = :id";
+$statement = MyPDO::getInstance()->prepare($query);
+$statement->execute($data);
+$result = $statement->FetchAll();
+
+foreach($result as $row){
+    $img = $row["pdp"];
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -22,10 +36,17 @@ if($_SESSION["id"]){
 <h1><a href="./index.html">UpEvent</a></h1>
 <?php
     if($_SESSION["id"]){
+        if($img == ''){
+            ?>
+            <div class="profil" style="background-image: url('./assets/avatar_default.png');"></div>
+            <?php
+        }
+        else{
+            ?>
+            <div class="profil" style="background-image: url('<?php echo $img ?>');"></div>
+            <?php
+        }
         ?>
-        <div class="profil">
-            <img src="./assets/avatar_default.png" alt="profil">
-        </div>
         <?php
     }
     else{
