@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed&display=swap');
+ @import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed&display=swap');
 
 body{
     font-family: 'Barlow Semi Condensed', sans-serif;
@@ -12,7 +12,8 @@ body{
 .profil {
     position: absolute;
     top: 10px;
-    left: 10px;
+    left: 50%; /* Centrer horizontalement */
+    transform: translateX(-50%); /* Ajuster pour un centrage parfait */
     z-index: 1000;
     width: 80px;
     height: 80px;
@@ -21,12 +22,11 @@ body{
     background-repeat: no-repeat;
     border-radius: 50%;
     cursor: pointer;
-    margin: 2rem auto ;
+    
 }
 
-
 .container {
-    width: 80%; 
+    width: 90%; 
     margin: 0 auto;
 }
 
@@ -55,6 +55,7 @@ body{
 
 .form-container {
     width: 90%;
+    margin-top: 5rem;
 }
 
 .form-container h1 {
@@ -114,7 +115,7 @@ body{
 }
 
 .form-container textarea {
-    height: 150px;
+    height: 90px;
     resize: vertical;
 }
 
@@ -159,7 +160,8 @@ body{
     position: relative;
     border-radius: 10px;
     box-shadow: 0 5px 10px rgba(0 , 0, 0, 0.2);
-    margin: auto 1rem;
+    margin: 1rem 1rem;
+    
 }
 
 #submit-container{
@@ -186,14 +188,56 @@ label{
     color: #400521;
 }
 
-@media screen and (min-width: 769px) {
-    .container {
-        width: 60%;
-    }
+.social-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
 }
 
-@media screen and (min-width: 1400px) {
+
+
+
+@media(min-width: 769px) {
+    
     .container {
-        width: 40%;
+        width: 60%; 
+        margin: auto;
+        min-height: 70vh; 
+        overflow-y: auto; 
     }
+
+    
+    body {
+        font-family: 'Barlow Semi Condensed', sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    
+    .profil {
+        width: 80px;
+        height: 80px;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        border-radius: 50%;
+        cursor: pointer;
+        margin-bottom: 1rem; 
+        
+    }
+
+    .two-social1{
+        display: flex;
+        flex-direction: row;
+        gap: 15px;
+        width: 100%;
+        align-items: center;
+    }
+
+    .form-container input{
+        margin: 1.5rem 0;
+    }
+
 }
