@@ -72,5 +72,6 @@ foreach($result as $row){
                 </div>
             </div>
         </div>
+        <script src="./script/profil.js"></script>
     </body>
 </html>
