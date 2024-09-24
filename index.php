@@ -33,17 +33,17 @@ foreach($result as $row){
     <header>
 <i class="fa-solid fa-plus"></i>
 
-<h1><a href="./index.html">UpEvent</a></h1>
+<h1><a href="./">UpEvent</a></h1>
 <?php
     if($_SESSION["id"]){
         if($img == ''){
             ?>
-            <div class="profil" style="background-image: url('./assets/avatar_default.png');"></div>
+            <div id="profil" class="profil" style="background-image: url('./assets/avatar_default.png');"></div>
             <?php
         }
         else{
             ?>
-            <div class="profil" style="background-image: url('<?php echo $img ?>');"></div>
+            <div id="profil" class="profil" style="background-image: url('<?php echo $img ?>');"></div>
             <?php
         }
         ?>

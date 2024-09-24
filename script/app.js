@@ -9,3 +9,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+document.getElementById("profil").addEventListener("click", () => {
+    location.href = "./profil.html";
+})
