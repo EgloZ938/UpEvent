@@ -14,14 +14,22 @@
         <h1><a href="./">UpEvent</a></h1>
     </header>
 
-    <form class="form-card" id="form-card" method="POST">
-        <input type="text" id="prenom" name="prenom" placeholder="Prénom" required>
-        <input type="text" id="nom" name="nom" placeholder="Nom" required>
-        <input type="email" id="email" name="email" placeholder="Email" required>
-        <input type="password" id="password" name="password" placeholder="Mot de passe" required>
-        <button type="submit">S'inscrire</button>
-        <p id="error-form" class="error-form"></p>
-    </form>
+    <div class="form-grip">
+        <div class="form-container">
+            <form method="post" id="form-card">
+                <h1 class="c-2">S'INSCRIRE</h1>
+                <input type="text" name="nom" id="nom" placeholder="Nom" required>
+                <input type="text" name="prenom" id="prenom" placeholder="Prénom" required>
+                <input type="email" name="email" id="email" placeholder="Email" required>
+                <input type="password" id="password" name="password" placeholder="Mot de passe" required>
+                <div class="f j-c" id="submit-container">
+                    <button type="submit">S'inscrire</button>
+                </div>
+                <p id="error-form" class="error-form"></p>
+                <p class="lien">Déjà un compte ? <a href="./connexion.html">Se connecter</a></p>
+            </form>
+        </div>
+    </div>
     <script src="./script/inscription.js"></script>
 </body>
 

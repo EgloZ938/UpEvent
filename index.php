@@ -64,7 +64,6 @@ foreach($result as $row){
     }
 ?>
 </header>
-<h1> connecté user id : <?php echo $id_user ?></h1>
 <script src="./script/app.js"></script>
 </body>
 </html>

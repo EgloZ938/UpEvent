@@ -1,9 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed&display=swap');
+
 body{
     height: 100vh; 
     display: flex;
     align-items: center;
     justify-content: center;
     margin: 0;
+    font-family: 'Barlow Semi Condensed', sans-serif;
 }
 
 h1 a{
@@ -15,44 +18,150 @@ h1 a{
     color: black;
 }
 
-a{
-    text-decoration: none;  
-    color: black;  
-    
+.c-1 {
+    color: #400521;
 }
 
-.form-card {
-    max-width: 355px;
+.c-2 {
+    color: #700a36;
+}
+
+.f {
+    display: flex;
+}
+
+.j-c {
+    justify-content: center;
+}
+
+.error-form {
+    color: red;
+    display: none;
+    text-align: center;
+    margin-bottom: 0;
+}
+
+.form-container {
+    width: 90%;
+}
+
+.form-container h1 {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+#loading {
+    animation: spin 1.5s linear infinite;
+}
+
+#validate-form {
+    position: absolute;
     width: 100%;
-    border-radius: 25px;
-    padding: 20px 30px 30px 30px;
-    box-shadow: 0 5px 10px rgba(0 , 0, 0, 0.2);
-    margin: 0 10px;
+    height: 100%;
+    background-color: #fafafab9;
+    z-index: 2;
+    display: none;
 }
 
-.form-card h2 {
+#valid-form {
+    display: none;
+}
+
+#contactForm h1 {
+    display: none;
+}
+
+.form-container input,
+.form-container textarea,
+.form-container select {
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    border: 1px solid #ced4da;
+    box-sizing: border-box;
+    color: #212529;
+    font-size: 14px;
+    transition: outline-color 0.3s ease, box-shadow 0.3s ease;
+    background: #fff;
+    border-radius: 5px;
+}
+
+.form-container select.placeholder {
+    color: gray;
+}
+
+.form-container textarea {
+    height: 150px;
+    resize: vertical;
+}
+
+.form-container input:focus,
+.form-container textarea:focus,
+.form-container select:focus {
+    outline: 1px solid #700a36;
+    box-shadow: 0 0 8px #700a369a;
+}
+
+.name-container {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.name-container input {
+    width: 100%;
+}
+
+.form-container button[type="submit"] {
+    width: 75%;
+    padding: 1rem;
+    background-color: #700a36;
+    color: #fff;
+    border: 1px solid #ced4da;
+    cursor: pointer;
+    transition: outline-color 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 5px;
+}
+
+.form-container button[type="submit"]:hover {
+    background-color: #400521;
+    outline: 1px solid #700a36;
+    box-shadow: 0 0 8px #700a369a;
+}
+
+.form-grip {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #fafafa;
+    position: relative;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px rgba(0 , 0, 0, 0.2);
+}
+
+#submit-container{
+    margin-bottom: 2rem;
+}
+
+.lien{
     text-align: center;
 }
-.form-card input {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-sizing: border-box;
+
+.lien a{
+    color: #700a36;
 }
-.form-card button {
-    width: 100%;
-    padding: 10px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-bottom: 0.5rem;
-}
-.form-card button:hover {
-    background-color: #45a049;
+
+.lien a:hover{
+    color: #400521;
 }
 
 .error-form{
