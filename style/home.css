@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed&display=swap');
+
+body{
+    font-family: 'Barlow Semi Condensed', sans-serif;
+}
+
 .fa-solid.fa-plus {
     margin: 10px 0 0 10px;
     font-size: 1.6rem;
