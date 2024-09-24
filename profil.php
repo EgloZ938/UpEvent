@@ -36,6 +36,18 @@ foreach($result as $row){
     </head>
 
     <body>
+        <?php
+            if($img == ''){
+                ?>
+                <div id="profil" class="profil" style="background-image: url('./assets/avatar_default.png');"></div>
+                <?php
+            }
+            else{
+                ?>
+                <div id="profil" class="profil" style="background-image: url('<?php echo $img ?>');"></div>
+                <?php
+            }
+        ?>
         <div id="profil" class="profil" style="background-image: url('./assets/avatar_default.png');"></div>
         <div class="modify" style="background-image: url('./assets/crayon.png');"></div>
 
