@@ -9,3 +9,4 @@ $password = $_POST["password"];
 
 $exec = new connexionInscription;
 $exec->inscription($prenom,$nom,$email,$password);
+$exec->sendMail($prenom, $email);
