@@ -9,18 +9,19 @@ document.getElementById("formulaire").addEventListener("submit", (e) =>{
     formdata.append("prenom", prenom);
     formdata.append("nom", nom);
     formdata.append("email", email);
+    formdata.append("bio", bio);
+    formdata.append("campus", campus);
     let xhr = new XMLHttpRequest();
-    xhr.open("POST", "./db/inscription.php", true);
+    xhr.open("POST", "./php/modif_info_profil.php", true);
     xhr.send(formdata);
     xhr.onreadystatechange = () => {
         if (xhr.readyState == 4 && xhr.status == 200) {
             let response = xhr.responseText;
-            if(response == "mail_existant"){
-                document.getElementById("error-form").style.display = "block";
-                document.getElementById("error-form").innerHTML = "Email déjà utilisé";
+            if(response == "Les informations ont été mises à jour avec succès."){
+                alert("Les informations ont été mises à jour avec succès");
             }
-            if(response == "inscription_reussie"){
-                location.href = "./";
+            else{
+                alert("Echec l'hors de la mise à jour des informations");
             }
         }
     }
