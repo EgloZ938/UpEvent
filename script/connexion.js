@@ -13,10 +13,12 @@ document.getElementById("form-card").addEventListener("submit", (e) => {
             let response = xhr.responseText;
             console.log(response);
             if(response == "mauvais mot de passe"){
-
+                document.getElementById("error-form").style.display = "block";
+                document.getElementById("error-form").innerHTML = "Mot de passe incorrect";
             }
             if(response == "email introuvable"){
-
+                document.getElementById("error-form").style.display = "block";
+                document.getElementById("error-form").innerHTML = "Email introuvable";
             }
             if(response == "conected"){
                 location.href = "./";

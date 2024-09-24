@@ -16,7 +16,8 @@ document.getElementById("form-card").addEventListener("submit", (e) => {
         if (xhr.readyState == 4 && xhr.status == 200) {
             let response = xhr.responseText;
             if(response == "mail_existant"){
-
+                document.getElementById("error-form").style.display = "block";
+                document.getElementById("error-form").innerHTML = "Email déjà utilisé";
             }
             if(response == "inscription_reussie"){
                 location.href = "./";
