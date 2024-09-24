@@ -16,10 +16,10 @@ document.getElementById("form-card").addEventListener("submit", (e) => {
 
             }
             if(response == "email introuvable"){
-                
+
             }
             if(response == "conected"){
-                location.href = "./index.html";
+                location.href = "./";
             }
         }
     }

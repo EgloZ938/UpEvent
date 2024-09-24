@@ -16,10 +16,10 @@ document.getElementById("form-card").addEventListener("submit", (e) => {
         if (xhr.readyState == 4 && xhr.status == 200) {
             let response = xhr.responseText;
             if(response == "mail_existant"){
-                
+
             }
             if(response == "inscription_reussie"){
-                location.href = "./index.html";
+                location.href = "./";
             }
         }
     }
