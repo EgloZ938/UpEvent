@@ -6,6 +6,15 @@ body {
 }
 
 
+/* Bouton retour */
+
+a.arrow {
+    color: inherit;
+    text-decoration: none;
+    margin-left: 2%;
+}
+
+
 /* Card */
 
 .container {
@@ -15,7 +24,7 @@ body {
     padding: 20px;
     background-color: white;
     box-shadow: 0 1px 5px #00000099;
-    border-radius: 15px;
+    border-radius: 50px;
     align-items: center;
     position: relative;
     transition-duration: 200ms;
@@ -138,7 +147,7 @@ img {
     display: block;
     width: 30%;
     padding: 10px;
-    background-color: #28a745;
+    background-color: #700A36;
     color: white;
     border: none;
     border-radius: 50px;
