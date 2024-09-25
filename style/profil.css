@@ -194,6 +194,24 @@ label{
     width: 100%;
 }
 
+.img-container .profil{
+    transition: filter 0.3s ease;
+}
+
+.img-container .profil:hover{
+    filter: brightness(0.5);
+}
+
+#submit-img-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    display: none;
+}
+
+#submit-img{
+    width: fit-content;
+}
 @media(min-width: 769px) {
     
     .container {

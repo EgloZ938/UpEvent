@@ -61,8 +61,9 @@ foreach($result as $row){
                         </div>
 
                         <input type="file" name="pdp" id="pdp" style="display: none;">
-
-                        <button type="submit">Enregistrer</button>
+                        <div id="submit-img-container">
+                            <button type="submit" id="submit-img">Modifier l'image</button>
+                        </div>
                     </form>
                     <form method="post" id="formulaire">
                         <label for="prenom">Prénom</label>

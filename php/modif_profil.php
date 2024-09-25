@@ -43,7 +43,8 @@ class modifUtilisateur{
                     'pdp' => $chemin_image,
                     'id' => $id_user
                 ]);
-                echo "Image uploadée avec succès et chemin mis à jour.";
+                header("Location: ../profil.php");
+                exit();
             } 
             else {
                 echo "Erreur lors du déplacement du fichier.";

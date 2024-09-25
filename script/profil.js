@@ -47,3 +47,16 @@ document.getElementById("img-container").addEventListener("click", function() {
     // Ouvrir l'input de fichier lorsque la div est cliquée
     document.getElementById("pdp").click();
 });
+
+document.getElementById("pdp").addEventListener("change", function(event) {
+    if(event.target.files && event.target.files[0]) {
+        let reader = new FileReader();
+
+        reader.onload = function(e) {
+            document.getElementById("profil").style.backgroundImage = `url(${e.target.result})`;
+        }
+        reader.readAsDataURL(event.target.files[0]);
+
+        document.getElementById("submit-img-container").style.display = "flex";
+    }
+});
