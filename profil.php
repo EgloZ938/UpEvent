@@ -45,21 +45,26 @@ foreach($result as $row){
         <div class="container">
             <div class="form-grip">
                 <div class="form-container">
-                    <form method="post" id="formulaire">
-                        <div class="img-container">
+                    <form method="post" id="formulaire-img" enctype="multipart/form-data" action="./php/modif_pdp.php">
+                        <div class="img-container" id="img-container" style="cursor: pointer;">
                             <?php
-                                if($img == ''){
-                                    ?>
-                                    <div id="profil" class="profil" style="background-image: url('./assets/avatar_default.png');"></div>
-                                    <?php
-                                }
-                                else{
-                                    ?>
-                                    <div id="profil" class="profil" style="background-image: url('<?php echo $img ?>');"></div>
-                                    <?php
-                                }
+                            if($img == ''){
+                                ?>
+                                <div id="profil" class="profil" style="background-image: url('./assets/avatar_default.png');"></div>
+                                <?php
+                            } else {
+                                ?>
+                                <div id="profil" class="profil" style="background-image: url('<?php echo $img ?>');"></div>
+                                <?php
+                            }
                             ?>
                         </div>
+
+                        <input type="file" name="pdp" id="pdp" style="display: none;">
+
+                        <button type="submit">Enregistrer</button>
+                    </form>
+                    <form method="post" id="formulaire">
                         <label for="prenom">Prénom</label>
                         <input type="text" name="prenom" id="prenom" placeholder="Prénom" value="<?php echo $prenom?>">
                         <label for="nom">Nom</label>

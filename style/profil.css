@@ -22,7 +22,6 @@ body{
     background-repeat: no-repeat;
     border-radius: 50%;
     cursor: pointer;
-    
 }
 
 .container {
@@ -195,9 +194,6 @@ label{
     width: 100%;
 }
 
-
-
-
 @media(min-width: 769px) {
     
     .container {
@@ -236,8 +232,12 @@ label{
         align-items: center;
     }
 
-    .form-container input{
-        margin: 1.5rem 0;
+    .profil {
+        width: 128px;
+        height: 128px;
     }
 
+    .img-container{
+        margin-bottom: 5rem;
+    }
 }

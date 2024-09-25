@@ -42,3 +42,8 @@ document.getElementById("formulaire").addEventListener("submit", (e) =>{
         }
     }
 })
+
+document.getElementById("img-container").addEventListener("click", function() {
+    // Ouvrir l'input de fichier lorsque la div est cliquée
+    document.getElementById("pdp").click();
+});
