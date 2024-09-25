@@ -166,7 +166,6 @@ h1 a {
     display: flex;
     flex-direction: column;
     margin-top: 10%;
-    margin-right: 50%;
 }
 
 .inscription {
@@ -176,11 +175,10 @@ h1 a {
 }
 
 .nb-container {
+    font-family: Arial, Helvetica, sans-serif;
     align-items: baseline;
-    gap: 13px;
-    margin-left: 85%;
+    gap: 13px; 
     margin-bottom: -30px;
-    margin-top: -20px;
     flex-wrap: nowrap;
 }
 
@@ -252,6 +250,6 @@ h1 a {
         display: flex;
         flex-direction: column;
         gap: 10px;
-        z-index: 10;
+        z-index: 1001;
     }
 }

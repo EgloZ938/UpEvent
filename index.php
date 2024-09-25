@@ -99,11 +99,10 @@ foreach($result as $row){
             }
         ?>
     <div class="card_container">
-        <?php echo $id_user_owner ?>
         <div class="text-container">
             <!-- Titre -->
             <h2 class="title"><?php echo $titre; ?></h2>
-            <!-- Image -->
+            <!-- Images -->
             <?php
             if($img_owner == ''){
                 ?>
@@ -133,9 +132,8 @@ foreach($result as $row){
 
         <button type="button" class="event_button">S'inscrire</button>
         <div class="nb-container">
-            <label class="personnes"> <?php echo $nbr_inscrit ?> / <?php echo $nbr_participants ?> </label>
-            <i class="fa-solid fa-person"></i>
-        </div>
+            <p class="personnes">Participants : <?php echo $nbr_inscrit ?> / <?php echo $nbr_participants ?> </p>
+            </div>
 </div>
     <?php
     }
