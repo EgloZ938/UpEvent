@@ -9,6 +9,7 @@ $nom = $_POST["nom"];
 $email = $_POST["email"];
 $bio = $_POST["bio"];
 $campus = $_POST["campus"];
+$reseaux = $_POST["reseaux"];
 
 $exec = new modifUtilisateur;
-$exec->modifInfo($id_user, $prenom, $nom, $email, $bio, $campus);
+$exec->modifInfo($id_user, $prenom, $nom, $email, $bio, $campus, $reseaux);

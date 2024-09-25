@@ -22,7 +22,12 @@ foreach($result as $row){
     $telephone = $row["telephone"];
     $email = $row["email"];
     $img = $row["pdp"];
-    $reseaux = $row["reseaux"];
+    $reseaux = json_decode($row["reseaux"], true);
+
+    $instagram = isset($reseaux['instagram']) ? $reseaux['instagram'] : '';
+    $linkedin = isset($reseaux['linkedin']) ? $reseaux['linkedin'] : '';
+    $twitter = isset($reseaux['twitter']) ? $reseaux['twitter'] : '';
+    $discord = isset($reseaux['discord']) ? $reseaux['discord'] : '';
 }
 ?>
 
@@ -33,28 +38,28 @@ foreach($result as $row){
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="./style/profil.css">
         <title>Mon profil</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     </head>
 
     <body>
-        <?php
-            if($img == ''){
-                ?>
-                <div id="profil" class="profil" style="background-image: url('./assets/avatar_default.png');"></div>
-                <?php
-            }
-            else{
-                ?>
-                <div id="profil" class="profil" style="background-image: url('<?php echo $img ?>');"></div>
-                <?php
-            }
-        ?>
-        <div id="profil" class="profil" style="background-image: url('./assets/avatar_default.png');"></div>
-        <div class="modify" style="background-image: url('./assets/crayon.png');"></div>
-
         <div class="container">
             <div class="form-grip">
                 <div class="form-container">
                     <form method="post" id="formulaire">
+                        <div class="img-container">
+                            <?php
+                                if($img == ''){
+                                    ?>
+                                    <div id="profil" class="profil" style="background-image: url('./assets/avatar_default.png');"></div>
+                                    <?php
+                                }
+                                else{
+                                    ?>
+                                    <div id="profil" class="profil" style="background-image: url('<?php echo $img ?>');"></div>
+                                    <?php
+                                }
+                            ?>
+                        </div>
                         <label for="prenom">Prénom</label>
                         <input type="text" name="prenom" id="prenom" placeholder="Prénom" value="<?php echo $prenom?>">
                         <label for="nom">Nom</label>
@@ -65,6 +70,20 @@ foreach($result as $row){
                         <textarea name="bio" id="bio" cols="30" rows="10"><?php echo $bio?></textarea>
                         <label for="campus">Campus</label>
                         <input type="text" name="campus" id="campus" placeholder="Campus" value="<?php echo $campus?>">
+                        <div class="social-container">
+                            <div class="two-social1">
+                                <i class="fa-brands fa-instagram"></i>
+                                <input type="text" name="instagram" id="instagram"  placeholder="instagram" value="<?php echo $instagram ?>">
+                                <i class="fa-brands fa-linkedin"></i>
+                                <input type="text" name="linkedin" id="linkedin" placeholder="linkedin" value="<?php echo $linkedin ?>">
+                            </div>
+                            <div class="two-social1">
+                                <i class="fa-brands fa-twitter"></i>
+                                <input type="text" name="twitter" id="twitter" placeholder="twitter" value="<?php echo $twitter ?>">
+                                <i class="fa-brands fa-discord"></i>
+                                <input type="text" name="discord" id="discord" placeholder="discord" value="<?php echo $discord ?>">
+                            </div>
+                        </div>
                         <div class="f j-c" id="submit-container">
                             <button type="submit">Modifier</button>
                         </div>
