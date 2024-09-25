@@ -28,6 +28,11 @@ foreach($result as $row){
     $linkedin = isset($reseaux['linkedin']) ? $reseaux['linkedin'] : '';
     $twitter = isset($reseaux['twitter']) ? $reseaux['twitter'] : '';
     $discord = isset($reseaux['discord']) ? $reseaux['discord'] : '';
+
+    $query2 = "SELECT * FROM liked WHERE id_user_liked = :id";
+    $statement2 = MyPDO::getInstance()->prepare($query2);
+    $statement2->execute($data);
+    $nbr_like = $statement2->rowCount();
 }
 ?>
 
@@ -40,63 +45,63 @@ foreach($result as $row){
         <title>Mon profil</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     </head>
-
     <body>
         <div class="container">
-            <div class="form-grip">
+            <div class="profil-container">
                 <div class="form-container">
-                    <form method="post" id="formulaire-img" enctype="multipart/form-data" action="./php/modif_pdp.php">
-                        <div class="img-container" id="img-container" style="cursor: pointer;">
+                    <div class="img-container" id="img-container" style="cursor: pointer;">
+                        <?php
+                        if($img == ''){
+                            ?>
+                            <div id="profil" class="profil" style="background-image: url('./assets/avatar_default.png');"></div>
                             <?php
-                            if($img == ''){
+                        } else {
+                            ?>
+                            <div id="profil" class="profil" style="background-image: url('<?php echo $img ?>');"></div>
+                            <?php
+                        }
+                        ?>
+                    </div>
+                    <h2 class="pseudo"><?php echo $prenom. " " ?><span class="c-2"><?php echo $nom ?></span></h2>
+                    <h3 class="pseudo"><?php echo $bio ?></h3>
+                    <h3 class="pseudo">Cet utilisateur a reçu <span class="c-2"><?php echo $nbr_like ?></span> likes</h3>
+                    <div class="container_info">
+                        <h3>Email : <span class="c-2"><?php echo $email ?></span></h3>
+                        <?php
+                            if($campus != ''){
                                 ?>
-                                <div id="profil" class="profil" style="background-image: url('./assets/avatar_default.png');"></div>
-                                <?php
-                            } else {
-                                ?>
-                                <div id="profil" class="profil" style="background-image: url('<?php echo $img ?>');"></div>
+                                <h3>Campus : <span class="c-2"><?php echo $campus?></span></h3>
                                 <?php
                             }
-                            ?>
-                        </div>
-
-                        <input type="file" name="pdp" id="pdp" style="display: none;">
-                        <div id="submit-img-container">
-                            <button type="submit" id="submit-img">Modifier l'image</button>
-                        </div>
-                    </form>
-                    <form method="post" id="formulaire">
-                        <label for="prenom">Prénom</label>
-                        <input type="text" name="prenom" id="prenom" placeholder="Prénom" value="<?php echo $prenom?>">
-                        <label for="nom">Nom</label>
-                        <input type="text" name="nom" id="nom" placeholder="Nom" value="<?php echo $nom?>">
-                        <label for="email">Email</label>
-                        <input type="text" name="email" id="email" placeholder="Email" value="<?php echo $email?>">
-                        <label for="bio">Bio</label>
-                        <textarea name="bio" id="bio" cols="30" rows="10"><?php echo $bio?></textarea>
-                        <label for="campus">Campus</label>
-                        <input type="text" name="campus" id="campus" placeholder="Campus" value="<?php echo $campus?>">
-                        <div class="social-container">
-                            <div class="two-social1">
+                        ?>
+                    </div>
+                    <div class="container_social">
+                        <div class="two_social">
+                            <div class="social">
                                 <i class="fa-brands fa-instagram"></i>
-                                <input type="text" name="instagram" id="instagram"  placeholder="instagram" value="<?php echo $instagram ?>">
+                                <div class="social_info"><?php echo $instagram ?></div>
+                            </div>
+                            <div class="social">
                                 <i class="fa-brands fa-linkedin"></i>
-                                <input type="text" name="linkedin" id="linkedin" placeholder="linkedin" value="<?php echo $linkedin ?>">
+                                <div class="social_info"><?php echo $linkedin?></div>
                             </div>
-                            <div class="two-social1">
+                        </div>
+                        <div class="two_social">
+                            <div class="social">
                                 <i class="fa-brands fa-twitter"></i>
-                                <input type="text" name="twitter" id="twitter" placeholder="twitter" value="<?php echo $twitter ?>">
+                                <div class="social_info"><?php echo $twitter?></div>
+                            </div>
+                            <div class="social">
                                 <i class="fa-brands fa-discord"></i>
-                                <input type="text" name="discord" id="discord" placeholder="discord" value="<?php echo $discord ?>">
+                                <div class="social_info"><?php echo $discord?></div>
                             </div>
                         </div>
-                        <div class="f j-c" id="submit-container">
-                            <button type="submit">Modifier</button>
-                        </div>
-                    </form>
+                    </div>
+
+                    <h2>Mes évenements</h2>
+                    <a href="./edit_profil.php"><div class="edit_profil_btn">Editer profil</div></a>
                 </div>
             </div>
         </div>
-        <script src="./script/profil.js"></script>
     </body>
 </html>

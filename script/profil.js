@@ -34,7 +34,7 @@ document.getElementById("formulaire").addEventListener("submit", (e) =>{
         if (xhr.readyState == 4 && xhr.status == 200) {
             let response = xhr.responseText;
             if(response == "Les informations ont été mises à jour avec succès."){
-                alert("Les informations ont été mises à jour avec succès");
+                location.href = "./profil.php";
             }
             else{
                 alert("Echec l'hors de la mise à jour des informations");
@@ -44,7 +44,6 @@ document.getElementById("formulaire").addEventListener("submit", (e) =>{
 })
 
 document.getElementById("img-container").addEventListener("click", function() {
-    // Ouvrir l'input de fichier lorsque la div est cliquée
     document.getElementById("pdp").click();
 });
 
