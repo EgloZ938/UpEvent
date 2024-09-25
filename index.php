@@ -1,3 +1,4 @@
+
 <?php
 require_once("./db/MyPDO.php");
 session_start();
@@ -17,8 +18,8 @@ $result = $statement->FetchAll();
 foreach($result as $row){
     $img = $row["pdp"];
 }
-
 ?>
+
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -28,6 +29,88 @@ foreach($result as $row){
     <title>Main page </title>
     <link rel="stylesheet" href="./style/home.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Animation CSS -->
+    <style>
+        .circle {
+            position: absolute;
+            border-radius: 50%;
+            background: #700A36;
+            animation: ripple 15s infinite;
+            box-shadow: 0px 0px 1px 0px #7bb3d8;
+        }
+        
+        .small {
+            width: 300px;
+            height: 300px;
+            left: -100px;
+            bottom: -100px;
+        }
+        
+        .medium {
+            width: 500px;
+            height: 500px;
+            left: -200px;
+            bottom: -200px;
+        }
+        
+        .large {
+            width: 700px;
+            height: 700px;
+            left: -300px;
+            bottom: -300px;
+        }
+        
+        .xlarge {
+            width: 900px;
+            height: 900px;
+            left: -400px;
+            bottom: -400px;
+        }
+        
+        .xxlarge {
+            width: 1100px;
+            height: 1100px;
+            left: -500px;
+            bottom: -500px;
+        }
+        
+        .shade1 {
+            opacity: 0.2;
+        }
+        
+        .shade2 {
+            opacity: 0.5;
+        }
+        
+        .shade3 {
+            opacity: 0.7;
+        }
+        
+        .shade4 {
+            opacity: 0.8;
+        }
+        
+        .shade5 {
+            opacity: 0.9;
+        }
+
+        .ripple-background {
+            z-index: -100;
+        }
+
+        @keyframes ripple {
+            0% {
+                transform: scale(0.8);
+            }
+            50% {
+                transform: scale(1.2);
+            }
+            100% {
+                transform: scale(0.8);
+            }
+        }
+    </style>
+    
 </head>
 <body>
     <header>
@@ -66,6 +149,59 @@ foreach($result as $row){
     }
 ?>
 </header>
+
+<div class="ripple-background">
+        <div class="circle xxlarge shade1"></div>
+        <div class="circle xlarge shade2"></div>
+        <div class="circle large shade3"></div>
+        <div class="circle medium shade4"></div>
+        <div class="circle small shade5"></div>
+</div>
+
+
+
+<div class="container">
+    <img src="icons/" class="icon"/>
+        <div class="text-container">
+            <!-- Titre -->
+            <h2 class="title">Titre Variable</h2>
+            <!-- Image -->
+            <img src="assets/avatar_default.png" class="pdp"/>
+            <!-- Description -->
+            <label class="description">Description<br>Pouvant prendre<br>plusieurs <br> lignes</label>
+        </div>  
+
+        <div class="info-container">
+            <!--Lieu-->
+            <label class="lieu">Lieu :</label>
+            <!--Date-->
+            <label class="date">Date :</label>
+        </div>
+
+        <button type="button" class="inscription">S'inscrire</button>
+        <div class="nb-container">
+            <label class="personnes">3 / 5</label>
+            <i class="fa-solid fa-person"></i>
+        </div>
+</div>
+
+
+            <!--Script de sélection de bouton + changement de couleur -->
+            <script>
+                function selectEventType(button) {
+                    // Enlève la classe "selected" de tous les boutons
+                    const buttons = document.querySelectorAll('.button');
+                    buttons.forEach(btn => {
+                        btn.classList.remove('selected');
+                        // Réinitialise la couleur des boutons
+                        btn.style.backgroundColor = ""; // Réinitialise la couleur de fond
+                    });
+
+                    // Ajoute la classe "selected" et change la couleur de fond du bouton cliqué
+                    button.classList.add('selected');
+                    button.style.backgroundColor = "#700A36";
+                }
+            </script>
 <script src="./script/app.js"></script>
 </body>
 </html>

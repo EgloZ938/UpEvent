@@ -6,6 +6,7 @@ body {
     justify-content: center;
     margin: 0;
     font-family: 'Barlow Semi Condensed', sans-serif;
+    overflow: hidden;
 }
 
 h1 a {

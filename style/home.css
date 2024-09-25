@@ -5,7 +5,250 @@
 }
 
 
-/* Rendre la couleur originale a la croix */
+/* Card */
+
+.container {
+    display: flex;
+    align-items: normal;
+    width: 100%;
+    max-width: 600px;
+    margin-top: 100px;
+    min-height: 200px;
+    margin: 40px auto;
+    padding: 50px;
+    box-shadow: 0 1px 5px #00000099;
+    border-radius: 30px;
+    position: relative;
+    box-sizing: border-box;
+    flex-wrap: wrap;
+    background-color: white;
+    /* animation */
+    transition-duration: 200ms;
+    transition-property: transform, box-shadow;
+    transition-timing-function: ease-out;
+    animation: popInCard 0.5s;
+}
+
+.container:hover {
+    transition-duration: 120ms;
+    box-shadow: 0 5px 20px 5px #00000044;
+}
+
+.text-container {
+    flex-direction: column;
+    margin-left: 50px;
+}
+
+.pdp {
+    position: absolute;
+    width: 85px;
+    height: auto;
+    border-radius: 100%;
+    top: 5px;
+    right: 5px;
+    flex-shrink: 0;
+}
+
+.title {
+    margin: 0;
+    min-width: 0;
+    margin-right: 100px;
+    margin-top: -20px;
+    max-width: 100%;
+    white-space: normal;
+    overflow-wrap: break-word;
+    flex: 1 1 auto;
+}
+
+.description {
+    text-align: left;
+}
+
+.info-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10%;
+    margin-right: 50%;
+}
+
+.inscription {
+    display: flex;
+    margin-right: 50%;
+    margin-top: 5%;
+}
+
+.nb-container {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    gap: 13px;
+    margin-left: 85%;
+    margin-bottom: -30px;
+    margin-top: -20px;
+    flex-wrap: nowrap;
+}
+
+
+/* Titre */
+
+h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+    color: #555;
+}
+
+input[type="text"],
+textarea,
+input[type="date"] {
+    width: 95%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-right: 30px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    text-align: center;
+}
+
+textarea {
+    resize: vertical;
+    height: 100px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+
+/* Icones cliquables */
+
+.button-group {
+    display: flex;
+    /* Utilisation de Flexbox pour aligner les boutons */
+    justify-content: space-between;
+    /* Espace entre les boutons */
+    margin-top: 10px;
+    /* Espace au-dessus des boutons */
+    margin-right: 20px;
+}
+
+.button {
+    flex: 1;
+    /* Prend tout l'espace disponible */
+    margin: 0 5px;
+    /* Espace entre les boutons */
+    padding: 10px;
+    border-radius: 20px;
+    /* Coins arrondis */
+    border: none;
+    /* Pas de bordure */
+    color: white;
+    /* Couleur du texte */
+    cursor: pointer;
+    /* Curseur en forme de main */
+    display: flex;
+    align-items: center;
+    /* Centre le contenu verticalement */
+    justify-content: center;
+    /* Centre le contenu horizontalement */
+    transition: transform 0.3s;
+    /* Transition pour l'animation */
+}
+
+
+/* Couleurs des boutons */
+
+.sport {
+    background-color: #b94949;
+    /* Vert */
+}
+
+.work {
+    background-color: #5d90c6;
+    /* Bleu */
+}
+
+.entertainment {
+    background-color: #c3ab65;
+    /* Jaune */
+}
+
+.other {
+    background-color: #5a8f88;
+    /* Gris */
+}
+
+.button:hover {
+    transform: scale(1.05);
+    /* Agrandit légèrement le bouton au survol */
+}
+
+
+/* Bouton Soumettre */
+
+.submit-btn {
+    display: block;
+    width: 30%;
+    padding: 10px;
+    background-color: #700A36;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    margin: 0 auto;
+    margin-top: 12px;
+    width: 150px;
+    height: 50px;
+}
+
+.submit-btn:hover {
+    background-color: #31723f;
+}
+
+
+/* Croix retour */
+
+
+/* Animation Croix */
+
+@keyframes popIn {
+    0% {
+        transform: scale(0%);
+    }
+    75% {
+        transform: scale(130%);
+    }
+    100% {
+        transform: scale(100%);
+    }
+}
+
+
+/* Animation pop */
+
+@keyframes popInCard {
+    0% {
+        transform: scale(90%);
+        opacity: 0.3;
+    }
+    75% {
+        transform: scale(105%);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(100%);
+    }
+}
+
+
+/**/
 
 a.croix {
     color: inherit;
@@ -13,6 +256,7 @@ a.croix {
 }
 
 a.croix i {
+    animation: popIn 0.5s;
     transform: rotate(0deg);
     transition: transform 300ms;
 }
@@ -21,6 +265,9 @@ a.croix i:hover {
     transform: rotate(180deg);
     transition: transform 300ms;
 }
+
+
+/**/
 
 h1 a {
     top: 2%;
