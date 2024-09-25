@@ -13,6 +13,6 @@ if(document.querySelector('.mobile-menu-button')){
 
 if(document.querySelector('#profil')){
     document.getElementById("profil").addEventListener("click", () => {
-        location.href = "./profil.html";
+        location.href = "./profil.php";
     })
 }
