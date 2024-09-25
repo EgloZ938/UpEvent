@@ -1,5 +1,6 @@
 
 <?php
+/*
 require_once("./db/MyPDO.php");
 session_start();
 if($_SESSION["id"]){
@@ -20,7 +21,7 @@ foreach($result as $row){
     $img = $row["pdp"];
     $prenom = $row["prenom"];
 }
-
+*/
 ?>
 
 <!DOCTYPE html>
@@ -116,10 +117,11 @@ foreach($result as $row){
 </head>
 <body>
     <header>
-<a href="evenement.html" class="croix"><i class="fa-solid fa-plus"></i></a>
+<a href="evenement.html" class="croix"><i class="fa-solid fa-plus" style="font-size: 45px;"></i></a>
 
 <h1><a href="./">UpEvent</a></h1>
 <?php
+/*
     if($_SESSION["id"]){
         if($img == ''){
             ?>
@@ -187,6 +189,7 @@ foreach($result as $row){
     
     echo "<p>Aucun événement disponible pour le moment.</p>";
 }
+    */
 ?>
 </header>
 
