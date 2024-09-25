@@ -1,36 +1,68 @@
+
+
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style/profil.css">
-    <title>Mon profil</title>
-</head>
-<body>
-    
-    <div id="profil" class="profil" style="background-image: url('./assets/avatar_default.png');"></div>
-    <div class="modify" style="background-image: url('./assets/crayon.png');"></div>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./style/profil.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <title>Mon profil</title>
+    </head>
 
-<div id="container">
-<div id="section1">
-<p> #PSEUDO</p>
-<button>Modifier</button>
-</div>
+    <body>
+        
+        
+        
+        
+        <!-- <div id="profil" class="profil" style="background-image: url('<?php echo $img ?>');"></div> -->
+        
+        <!-- <div id="profil" class="profil" style="background-image: url('./assets/avatar_default.png');"></div> -->
+        <div class="modify" style="background-image: url('./assets/crayon.png');"></div>
+        
+        <div class="container">
+            <div class="form-grip">
+                <div class="form-container">
+                    <form method="post" id="formulaire">
+                    <div class="img-container">
+                        <div id="profil" class="profil" style="background-image: url('./assets/avatar_default.png');"></div>
+                    </div>
+                        <label for="prenom">Prénom</label>
+                        <input type="text" name="prenom" id="prenom" placeholder="Prénom" value="<?php echo $prenom?>">
+                        <label for="nom">Nom</label>
+                        <input type="text" name="nom" id="nom" placeholder="Nom" value="<?php echo $nom?>">
+                        <label for="email">Email</label>
+                        <input type="text" name="email" id="email" placeholder="Email" value="<?php echo $email?>">
+                        <label for="bio">Bio</label>
+                        <textarea name="bio" id="bio" cols="30" rows="10"><?php echo $bio?></textarea>
+                        <label for="campus">Campus</label>
+                        <input type="text" name="campus" id="campus" placeholder="Campus" value="<?php echo $campus?>">
+                        <div class="social-container">
+                          
+                            <div class="two-social1">
+                            <i class="fa-brands fa-instagram"></i>
+                            <input type="text" name="instagram" id="instagram"  placeholder="instagram">
 
-<div id="section2">
-<p>Nom</p>
-<p>Prénom</p>
-<p>Etablissement</p>
-<p>Spécialité</p>
-</div>
+                            <i class="fa-brands fa-linkedin"></i>
+                            <input type="text" name="linkedin" id="linkedin" placeholder="linkedin">
+                            </div>
+                       
+                        <div class="two-social1">
+                            <i class="fa-brands fa-twitter"></i>
+                            <input type="text" name="twitter" id="twitter" placeholder="twitter">
 
-<div id="section3">
-<p><span>BIO</span></p>
-<button>Modifier</button>
-<p>Eleve de B3 IT SYSOPS, j’aime le sport et les jeux vidéos. Voilà voilà je n’ai pas grand chose de plus à dire</p>
-</div>
-
-</div>
-      
-</body>
+                            <i class="fa-brands fa-discord"></i>
+                            <input type="text" name="discord" id="discord" placeholder="discord">
+                        </div>
+                       
+                    </div>
+                        <div class="f j-c" id="submit-container">
+                            <button type="submit">Modifier</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <script src="./script/profil.js"></script>
+    </body>
 </html>

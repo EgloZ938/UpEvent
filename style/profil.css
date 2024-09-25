@@ -1,11 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed&display=swap');
+
 body{
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    margin: 0; padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
 }
 
 .profil {
     position: absolute;
     top: 10px;
-    left: 10px;
+    left: 50%;
+    transform: translateX(-50%);
     z-index: 1000;
     width: 80px;
     height: 80px;
@@ -13,86 +21,147 @@ body{
     background-position: center;
     background-repeat: no-repeat;
     border-radius: 50%;
-    cursor: pointer;
-    margin-bottom: 20px;
 }
 
-.modify {
-    position: absolute;
-    top: 70px;
-    left: 65px;
-    z-index: 1000;
-    width: 25px;
-    height: 25px;
-    background-size: contain; 
-    background-position: center;
-    background-repeat: no-repeat;
-    border-radius: 50%;
-    cursor: pointer;
-    margin-bottom: 20px;
-    background-color: transparent; 
+.container {
+    width: 95%;
+    margin: 0 auto;
 }
 
+.c-1 {
+    color: #400521;
+}
 
-#container {
+.c-2 {
+    color: #700a36;
+}
+
+.f {
     display: flex;
-    flex-direction: column;
+}
+
+.j-c {
     justify-content: center;
-    align-items: center; 
-    width: 80%; 
-    margin: 8rem auto; 
 }
 
-#container > div {
-    border: 1px solid rgba(0, 0, 0, 0.452); 
-    padding: 20px;
-    margin: 10px 0; 
-    width: 100%; 
-    box-sizing: border-box; 
+.error-form {
+    color: red;
+    display: none;
+    text-align: center;
+    margin-bottom: 0;
 }
 
-#section1, #section2, #section3 {
-    border-radius: 8px; 
+.form-container {
+    width: 90%;
+    margin-top: 5rem;
 }
 
-#section1{
+.profil-container {
     display: flex;
-    flex-direction: row;
-    gap: 3rem;
+    justify-content: center;
+    align-items: center;
+    background: #fafafa;
+    position: relative;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px rgba(0 , 0, 0, 0.2);
+    margin: 1rem 1rem;
 }
 
-#section2{
+.pseudo{
+    text-align: center;
+}
+
+.edit_profil_btn{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #700a36;
+    padding: 12px;
+    transition: outline-color 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #fff;
+    border-radius: 5px;
+}
+
+.edit_profil_btn:hover{
+    background-color: #400521;
+    outline: 1px solid #700a36;
+    box-shadow: 0 0 8px #700a369a;
+}
+
+a .edit_profil_btn{
+    color: #fff;
+    text-decoration: none;
+}
+
+.container_info{
+    border: 1px solid #400521;
+    border-radius: 10px;
+    padding: 1rem;
+    max-width: 95%;
+    margin: 0 auto;
+    margin-bottom: 2rem;
+}
+
+.social {
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 1.5rem;
+    align-items: center;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    overflow: hidden;
+    width: 100%;
 }
 
-#section3{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    
-}
-
-#section3 button{
-    margin: 0 .5rem 1rem 6rem;
-}
-
-p {
-    margin: 5px 0; 
-}
-
-button {
-    padding: 5px 10px;
+.social i {
     background-color: #700a36;
     color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+    padding: 10px;
+    font-size: 1.5rem;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-right: 1px solid #ced4da;
+    box-sizing: border-box;
 }
 
-button:hover {
-    background-color: #400521; 
+.two_social{
+    display: flex;
+    gap: 30px;
+    margin-bottom: 30px;
 }
 
+.social_info {
+    padding: 10px;
+    font-size: 1rem;
+    min-width: 100%;
+}
+
+@media(min-width: 769px) {
+    .profil {
+        width: 128px;
+        height: 128px;
+    }
+    
+    .img-container{
+        margin-bottom: 5rem;
+    }
+    
+    .container{
+        width: 80%;
+    }
+    
+    .container_info{
+        width: 70%;
+    }
+}
+
+@media(min-width:1280px){
+    .container {
+        width: 60%;
+    }
+
+    .container_info{
+        width: 50%;
+    }
+}
