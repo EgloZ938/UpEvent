@@ -44,6 +44,10 @@ body{
     justify-content: center;
 }
 
+.a-i{
+    align-items: center;
+}
+
 .error-form {
     color: red;
     display: none;
@@ -135,6 +139,85 @@ a .edit_profil_btn{
     padding: 10px;
     font-size: 1rem;
     min-width: 100%;
+}
+
+.card-event{
+    margin-bottom: 2rem;
+    border: 1px solid #400521;
+    border-radius: 10px;
+    padding: 1rem;
+    position: relative;
+}
+
+.pfp-event-card{
+    width: 64px;
+    height: 64px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+}
+
+.titre-event{
+    margin: 0 15px 0 0;
+}
+
+.pastille-theme{
+    display: flex;
+    padding: 4px 20px;
+    align-items: center;
+    border: 1px solid #000;
+    border-radius: 20px;
+    width: fit-content;
+}
+
+.rond{
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-right: 8px;
+}
+
+.rouge{
+    background-color: #b94949;
+}
+
+.bleu{
+    background-color: #5d90c6;
+}
+
+.jaune{
+    background-color: #c3ab65;
+}
+
+.marine{
+    background-color: #5a8f88;
+}
+
+.date{
+    margin-right: 15px;
+}
+
+.desc-event{
+    margin-bottom: 15px !important;
+}
+
+.participants-container{
+    display: flex;
+    justify-content: right;
+}
+
+.participants{
+    border: 1px solid #400521;
+    padding: 8px;
+    width: fit-content;
+}
+
+.card-event h4{
+    margin-bottom: 0;
 }
 
 @media(min-width: 769px) {
