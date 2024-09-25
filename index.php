@@ -8,6 +8,7 @@ if($_SESSION["id"]){
 
 $data = [
     'id' => $id_user
+
 ];
 
 $query = "SELECT * FROM utilisateur WHERE id = :id";
@@ -17,9 +18,10 @@ $result = $statement->FetchAll();
 
 foreach($result as $row){
     $img = $row["pdp"];
+    $prenom = $row["prenom"];
 }
-?>
 
+?>
 
 <!DOCTYPE html>
 <html lang="fr">
