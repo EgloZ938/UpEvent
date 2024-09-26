@@ -1,6 +1,5 @@
 
 <?php
-/*
 require_once("./db/MyPDO.php");
 session_start();
 if($_SESSION["id"]){
