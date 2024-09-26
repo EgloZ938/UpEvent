@@ -28,7 +28,7 @@ if(document.getElementsByClassName("pfp-cliquable")){
     }
 }
 
-if(document.getElementById("inscrire-btn")){
+if(document.getElementsByClassName("inscrire-btn")){
     let tabInscrireBtn = document.getElementsByClassName("inscrire-btn");
     for (let i = 0;i < tabInscrireBtn.length; i++){
         tabInscrireBtn[i].addEventListener("click", (e) =>{
@@ -51,7 +51,7 @@ if(document.getElementById("inscrire-btn")){
     }
 }
 
-if(document.getElementById("desinscrire-btn")){
+if(document.getElementsByClassName("desinscrire-btn")){
     let tabInscrireBtn = document.getElementsByClassName("desinscrire-btn");
     for (let i = 0;i < tabInscrireBtn.length; i++){
         tabInscrireBtn[i].addEventListener("click", (e) =>{

@@ -70,7 +70,7 @@ if (document.getElementById("dislike-btn")) {
     })
 }
 
-if(document.getElementById("desinscrire-btn")){
+if(document.getElementsByClassName("desinscrire-btn")){
     let tabInscrireBtn = document.getElementsByClassName("desinscrire-btn");
     for (let i = 0;i < tabInscrireBtn.length; i++){
         tabInscrireBtn[i].addEventListener("click", (e) =>{
@@ -79,6 +79,29 @@ if(document.getElementById("desinscrire-btn")){
             formdata.append("id_event", dataTarget);
             let xhr = new XMLHttpRequest();
             xhr.open("POST", "./php/remove_inscription.php", true);
+            xhr.send(formdata);
+            xhr.onreadystatechange = () => {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    let response = xhr.responseText;
+                    console.log(response);
+                    if(response == "réussite"){
+                        location.reload();
+                    }
+                }
+            }
+        })
+    }
+}
+
+if(document.getElementsByClassName("inscrire-btn")){
+    let tabInscrireBtn = document.getElementsByClassName("inscrire-btn");
+    for (let i = 0;i < tabInscrireBtn.length; i++){
+        tabInscrireBtn[i].addEventListener("click", (e) =>{
+            let dataTarget = e.currentTarget.getAttribute('data-id-event');
+            let formdata = new FormData();
+            formdata.append("id_event", dataTarget);
+            let xhr = new XMLHttpRequest();
+            xhr.open("POST", "./php/add_inscription.php", true);
             xhr.send(formdata);
             xhr.onreadystatechange = () => {
                 if (xhr.readyState == 4 && xhr.status == 200) {

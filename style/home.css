@@ -84,27 +84,22 @@ body {
 
 .sport {
     background-color: #b94949;
-    /* Vert */
 }
 
 .work {
     background-color: #5d90c6;
-    /* Bleu */
 }
 
 .entertainment {
     background-color: #c3ab65;
-    /* Jaune */
 }
 
 .other {
     background-color: #5a8f88;
-    /* Gris */
 }
 
 .button:hover {
     transform: scale(1.05);
-    /* Agrandit légèrement le bouton au survol */
 }
 
 
@@ -118,7 +113,6 @@ body {
     transition-duration: 200ms;
     transition-property: transform, box-shadow;
     transition-timing-function: ease-out;
-    animation: popInCard 0.5s;
 }
 
 .card-event:hover{

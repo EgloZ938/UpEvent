@@ -239,6 +239,35 @@ if (isset($_GET['id_user'])) {
                                     <?php
                                 }
                                 ?>
+                                <?php 
+                                    if($peutDeco != true){
+                                        $data5 = [
+                                            'id_user' => $id_user,
+                                            'id_event' => $id_event
+                                        ];
+    
+                                        $query7 = "SELECT * FROM inscrit WHERE id_user = :id_user AND id_evenement = :id_event";
+                                        $statement7 = MyPDO::getInstance()->prepare($query7);
+                                        $statement7->execute($data5);
+                                        $result6 = $statement7->FetchAll();
+                                        $nbr_resultat3 = $statement7->rowCount();
+
+                                        if($nbr_resultat3 < 1){
+                                            ?>
+                                            <div class="btn-gestion-container">
+                                                <div class="inscrire-btn btn-inscrit" data-id-event="<?php echo $id_event ?>">M'inscrire</div>
+                                            </div>
+                                            <?php
+                                        }
+                                        else{
+                                            ?>
+                                            <div class="btn-gestion-container">
+                                                <div class="desinscrire-btn btn-inscrit" data-id-event="<?php echo $id_event ?>">Me désinscrire</div>
+                                            </div>
+                                            <?php
+                                        }
+                                    }
+                                ?>
                         </div>
                             <?php
                             }
