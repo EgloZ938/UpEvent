@@ -319,6 +319,9 @@ if (isset($_GET['id_user'])) {
                                         <div class="participants-container">
                                             <div class="participants">Participants : <?php echo $nbr_inscrit ?> / <span class="c-2"><?php echo $nbr_participants ?></span></div>
                                         </div>
+                                        <div class="btn-gestion-container">
+                                            <div class="desinscrire-btn btn-inscrit" id="desinscrire-btn" data-id-event="<?php echo $id_event ?>">Me désinscrire</div>
+                                        </div>
                                 </div>
                             <?php
                             }

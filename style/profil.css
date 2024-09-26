@@ -278,6 +278,23 @@ a .profil_btn {
     cursor: pointer;
 }
 
+.btn-inscrit{
+    padding: 12px;
+    background-color: #fff;
+    transition: outline-color 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #000;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    color: #400521;
+    margin-right: 15px;
+}
+
+.btn-inscrit:hover{
+    outline: 1px solid #700a36;
+    box-shadow: 0 0 8px #700a369a;
+}
+
 @media(min-width: 769px) {
     .profil {
         width: 128px;

@@ -156,14 +156,14 @@ foreach($result as $row){
                     if($nbr_resultat2 < 1){
                         ?>
                         <div class="btn-gestion-container">
-                            <div class="inscrire-btn btn-inscrit" id="inscrire-btn" data-id-event="<?php echo $id ?>">M'inscrire</div>
+                            <div class="inscrire-btn btn-inscrit" data-id-event="<?php echo $id ?>">M'inscrire</div>
                         </div>
                         <?php
                     }
                     else{
                         ?>
                         <div class="btn-gestion-container">
-                            <div class="desinscrire-btn btn-inscrit" id="desinscrire-btn" data-id-event="<?php echo $id ?>">Me désinscrire</div>
+                            <div class="desinscrire-btn btn-inscrit" data-id-event="<?php echo $id ?>">Me désinscrire</div>
                         </div>
                         <?php
                     }
