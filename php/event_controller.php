@@ -24,4 +24,33 @@ class eventController{
                 echo "echec";
             }
     }
+
+    public function modifEvent(){
+        
+    }
+
+    public function removeEvent($id_user, $id_event){
+        $dataParticipants = [
+            'id_event' => $id_event
+        ];
+    
+        $queryParticipants = "DELETE FROM inscrit WHERE id_evenement = :id_event";
+        $statementParticipants = MyPDO::getInstance()->prepare($queryParticipants);
+        $successParticipants = $statementParticipants->execute($dataParticipants);
+    
+        $dataEvent = [
+            'id_event' => $id_event,
+            'id_user' => $id_user
+        ];
+    
+        $queryEvent = "DELETE FROM evenement WHERE id = :id_event AND id_user_owner = :id_user";
+        $statementEvent = MyPDO::getInstance()->prepare($queryEvent);
+        $successEvent = $statementEvent->execute($dataEvent);
+    
+        if ($successParticipants && $successEvent) {
+            echo "L'événement et tous ses participants ont été supprimés avec succès.";
+        } else {
+            echo "Erreur lors de la suppression de l'événement ou des participants.";
+        }
+    }
 }

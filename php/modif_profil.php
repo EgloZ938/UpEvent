@@ -53,4 +53,37 @@ class modifUtilisateur{
             echo "Aucun fichier ou erreur lors de l'upload.";
         }
     }
+
+    public function addLike($id_user, $id_user_liked){
+        $data = [
+            'id_user' => $id_user,
+            'id_user_liked' => $id_user_liked
+        ];
+
+        $query = "INSERT INTO liked (id, id_user, id_user_liked) VALUES (NULL, :id_user, :id_user_liked)";
+        $statement = MyPDO::getInstance()->prepare($query);
+        if($statement->execute($data)){
+            echo "like ajouté";
+        }
+        else{
+            echo "erreur";
+        }
+    }
+
+    public function removeLike($id_user, $id_user_liked){
+        $data = [
+            'id_user' => $id_user,
+            'id_user_liked' => $id_user_liked
+        ];
+    
+        $query = "DELETE FROM liked WHERE id_user = :id_user AND id_user_liked = :id_user_liked";
+        $statement = MyPDO::getInstance()->prepare($query);
+        
+        if($statement->execute($data)){
+            echo "like supprimé";
+        }
+        else{
+            echo "erreur lors de la suppression";
+        }
+    }
 }
