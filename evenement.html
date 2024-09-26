@@ -14,7 +14,7 @@
 <body>
     <div class="container">
 
-        <h2>Créer un Événement</h2>
+        <h2 class="title_eventForm">Créer un Événement</h2>
         <form id="formulaire" method="post">
 
             <input type="hidden" name="categorie" id="categorie-value">
@@ -28,13 +28,33 @@
 
             <!--Catégorie-->
             <label for="categorie" style="text-align: center">Catégorie</label>
-            <div class="button-group">
-                <button type="button" class="button sport" onclick="selectEventType(this)">Sport</button>
-                <button type="button" class="button work" onclick="selectEventType(this)">Travail</button>
-                <button type="button" class="button entertainment"
+            <!-- <div class="pastille-theme">
+                <button type="button" class="rouge" onclick="selectEventType(this)">Sport</button>
+                <button type="button" class="bleu" onclick="selectEventType(this)">Travail</button>
+                <button type="button" class="jaune"
                     onclick="selectEventType(this)">Divertissement</button>
-                <button type="button" class="button other" onclick="selectEventType(this)">Autre</button>
-            </div>
+                <button type="button" class="marine" onclick="selectEventType(this)">Autre</button>
+            </div> -->
+
+                <div class="pastille-theme">
+                <div class="rond rouge"></div>
+                <div type="button" class="theme" onclick="selectEventType(this)" data-target="id_event">SPORT</div>
+                </div>
+
+                <div class="pastille-theme">
+                <div class="rond bleu"></div>
+                <div type="button" class="theme" onclick="selectEventType(this)" data-target="id_event">TRAVAIL</div>
+                </div>
+
+                <div class="pastille-theme">
+                <div class="rond jaune"></div>
+                <div type="button" class="theme" onclick="selectEventType(this)" data-target="id_event">DIVERTISSEMENT</div>
+                </div>
+
+                <div class="pastille-theme">
+                <div class="rond marine"></div>
+                <div type="button" class="theme" onclick="selectEventType(this)" data-target="id_event">AUTRE</div>
+                </div>
 
             <!-- Lieu -->
             <label for="location">Lieu</label>

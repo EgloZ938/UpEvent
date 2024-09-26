@@ -5,13 +5,16 @@ body {
     padding: 0;
 }
 
+.title_eventForm{
+    color: #700A36;
+}
 
 /* Bouton retour */
 
 a.arrow {
     color: inherit;
     text-decoration: none;
-    margin-left: 2%;
+    margin-left: 5%;
 }
 
 
@@ -20,7 +23,6 @@ a.arrow {
 .container {
     max-width: 600px;
     margin: 40px auto;
-    margin-top: 100px;
     padding: 20px;
     background-color: white;
     box-shadow: 0 1px 5px #00000099;
@@ -162,6 +164,42 @@ img {
     background-color: #31723f;
 }
 
+/** button-themes */
+
+.pastille-theme{
+    display: flex;
+    padding: 4px 20px;
+    align-items: center;
+    border: 1px solid #000;
+    border-radius: 20px;
+    margin-top: .5rem;
+    width: fit-content;
+    justify-content: center;
+}
+
+.rond{
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-right: 8px;
+}
+
+.rouge{
+    background-color: #b94949;
+}
+
+.bleu{
+    background-color: #5d90c6;
+}
+
+.jaune{
+    background-color: #c3ab65;
+}
+
+.marine{
+    background-color: #5a8f88;
+}
+
 @media (max-width: 196px) {
     .submit-btn {
         width: auto;
@@ -177,15 +215,37 @@ img {
 }
 
 @media (max-width: 576px) {
-    .button-group {
-        flex-direction: column;
-        /* Aligne les boutons en colonne */
-        margin-bottom: 10px;
+ 
+    .pastille-theme{
+        display: flex;
+        padding: 4px 20px;
+        align-items: center;
+        border: 1px solid #000;
+        border-radius: 20px;
+        margin-top: .5rem;
+        justify-content: center;
     }
-    .button {
-        width: 100%;
-        /* Les boutons prennent toute la largeur disponible */
-        margin: 5px 0;
-        /* Marge verticale entre les boutons */
+    
+    .rond{
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        margin-right: 8px;
+    }
+    
+    .rouge{
+        background-color: #b94949;
+    }
+    
+    .bleu{
+        background-color: #5d90c6;
+    }
+    
+    .jaune{
+        background-color: #c3ab65;
+    }
+    
+    .marine{
+        background-color: #5a8f88;
     }
 }
