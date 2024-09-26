@@ -1,16 +1,17 @@
-function selectEventType(button) {
-    // Enlève la classe "selected" de tous les boutons
-    const buttons = document.querySelectorAll('.button');
-    buttons.forEach(btn => {
-        btn.classList.remove('selected');
-        // Réinitialise la couleur des boutons
-        btn.style.backgroundColor = ""; // Réinitialise la couleur de fond
+function selectEventType(pastille) {
+    // Sélectionner toutes les pastille-theme
+    const pastilles = document.querySelectorAll('.pastille-theme');
+    
+    pastilles.forEach(pastilleItem => {
+        pastilleItem.style.transform = "scale(1)";
+        pastilleItem.style.backgroundColor = "#fff";
     });
-
-    // Ajoute la classe "selected" et change la couleur de fond du bouton cliqué
-    button.classList.add('selected');
-    button.style.backgroundColor = "#700A36";
-    document.getElementById("categorie-value").value = button.innerHTML;
+    
+    pastille.style.transform = "scale(1.1)";
+    pastille.style.backgroundColor = "#f0f0f0";
+    
+    const themeText = pastille.querySelector('.theme').innerHTML;
+    document.getElementById("categorie-value").value = themeText;
 }
 
 document.getElementById("formulaire").addEventListener("submit", (e) =>{
@@ -36,9 +37,8 @@ document.getElementById("formulaire").addEventListener("submit", (e) =>{
     xhr.onreadystatechange = () => {
         if (xhr.readyState == 4 && xhr.status == 200) {
             let response = xhr.responseText;
-            console.log(response);
             if(response == "réussite"){
-                location.href = "./";
+                location.href = "./profil.php";
             }
         }
     }

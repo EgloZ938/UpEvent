@@ -5,108 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Proposition d'Événement</title>
-    <!-- Connexion au fichier CSS -->
     <link rel="stylesheet" href="style/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <a href="index.php" class="arrow"><i class="fa-solid fa-angle-left fa-3x"></i></a>
-    <!-- Animation CSS -->
-    <style>
-        .circle {
-            position: absolute;
-            border-radius: 50%;
-            background: #700A36;
-            animation: ripple 15s infinite;
-            box-shadow: 0px 0px 1px 0px #7bb3d8;
-        }
-        
-        .small {
-            width: 300px;
-            height: 300px;
-            /*
-                left: -100px;
-                bottom: -100px;
-                */
-        }
-        
-        .medium {
-            width: 500px;
-            height: 500px;
-            /*
-                left: -200px;
-                bottom: -200px;
-                */
-        }
-        
-        .large {
-            width: 700px;
-            height: 700px;
-            /*
-                left: -300px;
-                bottom: -300px;
-                */
-        }
-        
-        .xlarge {
-            width: 900px;
-            height: 900px;
-            /*
-                left: -400px;
-                bottom: -400px;
-                */
-        }
-        
-        .xxlarge {
-            width: 1100px;
-            height: 1100px;
-            /*
-                left: -500px;
-                bottom: -500px;
-                */
-        }
-        
-        .shade1 {
-            opacity: 0.2;
-        }
-        
-        .shade2 {
-            opacity: 0.5;
-        }
-        
-        .shade3 {
-            opacity: 0.7;
-        }
-        
-        .shade4 {
-            opacity: 0.8;
-        }
-        
-        .shade5 {
-            opacity: 0.9;
-        }
-        
-        .ripple-background {
-            z-index: -100;
-            position: absolute;
-            display: grid;
-            place-items: center;
-            height: 100%;
-            width: 100%;
-            margin: 0;
-            top: 1vh;
-        }
-        
-        @keyframes ripple {
-            0% {
-                transform: scale(0.8);
-            }
-            50% {
-                transform: scale(1.2);
-            }
-            100% {
-                transform: scale(0.8);
-            }
-        }
-    </style>
+    <link rel="icon" href="./assets/favicon.ico" type="image/x-icon">
 </head>
 
 <body>
@@ -114,76 +16,67 @@
     <head>
         <h1><a href="./">UpEvent</a></h1>
     </head>
-
-    <div class="ripple-background">
-        <div class="circle xxlarge shade1"></div>
-        <div class="circle xlarge shade2"></div>
-        <div class="circle large shade3"></div>
-        <div class="circle medium shade4"></div>
-        <div class="circle small shade5"></div>
-    </div>
-
     <div class="container">
 
-        <h2 class="title_eventForm">Créer un Événement</h2>
-        <form id="formulaire" method="post">
-
-            <input type="hidden" name="categorie" id="categorie-value">
-            <!-- Titre -->
-            <label for="title">Titre</label>
-            <input type="text" id="titre" name="titre" placeholder="Entrez le titre de l'événement" required>
-
-            <!-- Description -->
-            <label for="description">Description</label>
-            <textarea id="description" name="description" placeholder="Décrivez l'événement" required></textarea>
-
-            <!--Catégorie-->
-            <label for="categorie" style="text-align: center">Catégorie</label>
-            <!-- <div class="pastille-theme">
-                <button type="button" class="rouge" onclick="selectEventType(this)">Sport</button>
-                <button type="button" class="bleu" onclick="selectEventType(this)">Travail</button>
-                <button type="button" class="jaune"
-                    onclick="selectEventType(this)">Divertissement</button>
-                <button type="button" class="marine" onclick="selectEventType(this)">Autre</button>
-            </div> -->
-
-                <div class="pastille-theme">
-                <div class="rond rouge"></div>
-                <div type="button" class="theme" onclick="selectEventType(this)" data-target="id_event">SPORT</div>
-                </div>
-
-                <div class="pastille-theme">
-                <div class="rond bleu"></div>
-                <div type="button" class="theme" onclick="selectEventType(this)" data-target="id_event">TRAVAIL</div>
-                </div>
-
-                <div class="pastille-theme">
-                <div class="rond jaune"></div>
-                <div type="button" class="theme" onclick="selectEventType(this)" data-target="id_event">DIVERTISSEMENT</div>
-                </div>
-
-                <div class="pastille-theme">
-                <div class="rond marine"></div>
-                <div type="button" class="theme" onclick="selectEventType(this)" data-target="id_event">AUTRE</div>
-                </div>
-
-            <!-- Lieu -->
-            <label for="location">Lieu</label>
-            <input type="text" id="location" name="location" placeholder="Entrez le lieu de l'événement" required>
-
-            <!-- Date -->
-            <label for="date">Date</label>
-            <input type="date" id="date" name="date" required class="custom-date">
-
-            <!-- heure -->
-            <label for="heure">Heure</label>
-            <input type="time" id="heure" name="heure" required>
-
-            <!-- Participants -->
-            <label for="participants">Nombre de participants</label>
-            <input type="number" id="participants" name="participants" min="1" required>
-            <button type="submit" class="submit-btn">Proposer l'événement</button>
-        </form>
+        <div class="form-grip">
+            <div class="form-container">
+                <h2 class="title_eventForm">Créer un Événement</h2>
+                <form id="formulaire" method="post">
+        
+                    <input type="hidden" name="categorie" id="categorie-value">
+                    <!-- Titre -->
+                    <label for="title">Titre</label>
+                    <input type="text" id="titre" name="titre" placeholder="Entrez le titre de l'événement" required>
+        
+                    <!-- Description -->
+                    <label for="description">Description</label>
+                    <textarea id="description" name="description" placeholder="Décrivez l'événement" required></textarea>
+        
+                    <!--Catégorie-->
+                    <label for="categorie" style="text-align: center">Catégorie</label>
+                    <div class="pastille-container">
+                        <div class="pastille-theme" onclick="selectEventType(this)">
+                            <div class="rond rouge"></div>
+                            <div class="theme" data-target="id_event">Sport</div>
+                        </div>
+            
+                        <div class="pastille-theme" onclick="selectEventType(this)">
+                            <div class="rond bleu"></div>
+                            <div class="theme" data-target="id_event">Travail</div>
+                        </div>
+            
+                        <div class="pastille-theme" onclick="selectEventType(this)">
+                            <div class="rond jaune"></div>
+                            <div class="theme" data-target="id_event">Divertissement</div>
+                        </div>
+            
+                        <div class="pastille-theme" onclick="selectEventType(this)">
+                            <div class="rond marine"></div>
+                            <div class="theme" data-target="id_event">Autre</div>
+                        </div>
+                    </div>
+        
+                    <!-- Lieu -->
+                    <label for="location">Lieu</label>
+                    <input type="text" id="location" name="location" placeholder="Entrez le lieu de l'événement" required>
+        
+                    <!-- Date -->
+                    <label for="date">Date</label>
+                    <input type="date" id="date" name="date" required class="custom-date">
+        
+                    <!-- heure -->
+                    <label for="heure">Heure</label>
+                    <input type="time" id="heure" name="heure" required>
+        
+                    <!-- Participants -->
+                    <label for="participants">Nombre de participants</label>
+                    <input type="number" id="participants" name="participants" min="1" required>
+                    <div class="f j-c" id="submit-container">
+                        <button type="submit">Modifier</button>
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
     <script src="./script/evenement.js"></script>
 </body>
