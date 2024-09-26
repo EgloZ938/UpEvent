@@ -32,14 +32,6 @@ if(document.getElementsByClassName("suppr-btn")){
     }
 }
 
-if(document.getElementsByClassName("modif-btn")){
-    let tabModifBtn = document.getElementsByClassName("modif-btn");
-
-    for(let i = 0; i < tabModifBtn.length; i++){
-        let dataTarget = e.currentTarget.getAttribute("data-id-event");
-    }
-}
-
 if (document.getElementById("like-btn")) {
     document.getElementById("like-btn").addEventListener("click", (e) => {
         let id_user_profil = e.currentTarget.getAttribute('data-id-profil');
@@ -76,4 +68,27 @@ if (document.getElementById("dislike-btn")) {
             }
         }
     })
+}
+
+if(document.getElementById("desinscrire-btn")){
+    let tabInscrireBtn = document.getElementsByClassName("desinscrire-btn");
+    for (let i = 0;i < tabInscrireBtn.length; i++){
+        tabInscrireBtn[i].addEventListener("click", (e) =>{
+            let dataTarget = e.currentTarget.getAttribute('data-id-event');
+            let formdata = new FormData();
+            formdata.append("id_event", dataTarget);
+            let xhr = new XMLHttpRequest();
+            xhr.open("POST", "./php/remove_inscription.php", true);
+            xhr.send(formdata);
+            xhr.onreadystatechange = () => {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    let response = xhr.responseText;
+                    console.log(response);
+                    if(response == "réussite"){
+                        location.reload();
+                    }
+                }
+            }
+        })
+    }
 }

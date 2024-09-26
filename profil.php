@@ -3,6 +3,7 @@ require_once("./db/MyPDO.php");
 session_start();
 if($_SESSION["id"]){
     $id_user = $_SESSION["id"];
+    $connected = true;
 }
 
 if (isset($_GET['id_user'])) {
@@ -361,31 +362,35 @@ if (isset($_GET['id_user'])) {
                                         <div class="participants-container">
                                             <div class="participants">Participants : <?php echo $nbr_inscrit ?> / <span class="c-2"><?php echo $nbr_participants ?></span></div>
                                         </div>
+                                        <div class="btn-gestion-container">
+                                            <div class="desinscrire-btn btn-inscrit" id="desinscrire-btn" data-id-event="<?php echo $id_event ?>">Me désinscrire</div>
+                                        </div>
                                 </div>
                             <?php
                             }
                         }
 
                         if(isset($id_user_profil) && $id_user_profil != $id_user){
-
-                            $data4 = [
-                                'id_user' => $id_user,
-                                'id_user_liked' => $id_user_profil
-                            ];
-
-                            $query6 = "SELECT * FROM liked WHERE id_user = :id_user AND id_user_liked = :id_user_liked";
-                            $statement6 = MyPDO::getInstance()->prepare($query6);
-                            $statement6->execute($data4);
-                            $nbr_like_reel = $statement6->rowCount();
-                            if($nbr_like_reel < 1){
-                                ?>
-                                <div class="profil_btn" id="like-btn" data-id-profil="<?php echo $id_user_profil ?>">J'aime</div>
-                                <?php
-                            }
-                            else{
-                                ?>
-                                <div class="profil_btn" id="dislike-btn" data-id-profil="<?php echo $id_user_profil ?>">Je n'aime plus</div>
-                                <?php
+                            if($connected == true){
+                                $data4 = [
+                                    'id_user' => $id_user,
+                                    'id_user_liked' => $id_user_profil
+                                ];
+    
+                                $query6 = "SELECT * FROM liked WHERE id_user = :id_user AND id_user_liked = :id_user_liked";
+                                $statement6 = MyPDO::getInstance()->prepare($query6);
+                                $statement6->execute($data4);
+                                $nbr_like_reel = $statement6->rowCount();
+                                if($nbr_like_reel < 1){
+                                    ?>
+                                    <div class="profil_btn" id="like-btn" data-id-profil="<?php echo $id_user_profil ?>">J'aime</div>
+                                    <?php
+                                }
+                                else{
+                                    ?>
+                                    <div class="profil_btn" id="dislike-btn" data-id-profil="<?php echo $id_user_profil ?>">Je n'aime plus</div>
+                                    <?php
+                                }
                             }
                         }
                         else{

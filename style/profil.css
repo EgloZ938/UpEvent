@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed&display=swap');
-
-body{
+body {
     font-family: 'Barlow Semi Condensed', sans-serif;
-    margin: 0; padding: 0;
+    margin: 0;
+    padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -44,10 +44,6 @@ body{
     justify-content: center;
 }
 
-.a-i{
-    align-items: center;
-}
-
 .error-form {
     color: red;
     display: none;
@@ -67,15 +63,15 @@ body{
     background: #fafafa;
     position: relative;
     border-radius: 10px;
-    box-shadow: 0 5px 10px rgba(0 , 0, 0, 0.2);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
     margin: 1rem 1rem;
 }
 
-.pseudo{
+.pseudo {
     text-align: center;
 }
 
-.profil_btn{
+.profil_btn {
     position: absolute;
     top: 10px;
     right: 10px;
@@ -88,18 +84,18 @@ body{
     cursor: pointer;
 }
 
-.profil_btn:hover{
+.profil_btn:hover {
     background-color: #400521;
     outline: 1px solid #700a36;
     box-shadow: 0 0 8px #700a369a;
 }
 
-a .profil_btn{
+a .profil_btn {
     color: #fff;
     text-decoration: none;
 }
 
-.modif-btn{
+.modif-btn {
     padding: 12px;
     background-color: #fff;
     transition: outline-color 0.3s ease, box-shadow 0.3s ease;
@@ -111,12 +107,12 @@ a .profil_btn{
     margin-right: 15px;
 }
 
-.modif-btn:hover{
+.modif-btn:hover {
     outline: 1px solid #700a36;
     box-shadow: 0 0 8px #700a369a;
 }
 
-.suppr-btn{
+.suppr-btn {
     padding: 12px;
     background-color: #fff;
     transition: outline-color 0.3s ease, box-shadow 0.3s ease;
@@ -127,12 +123,12 @@ a .profil_btn{
     color: #400521;
 }
 
-.suppr-btn:hover{
+.suppr-btn:hover {
     outline: 1px solid #700a36;
     box-shadow: 0 0 8px #700a369a;
 }
 
-.container_info{
+.container_info {
     border: 1px solid #400521;
     border-radius: 10px;
     padding: 1rem;
@@ -164,7 +160,7 @@ a .profil_btn{
     box-sizing: border-box;
 }
 
-.two_social{
+.two_social {
     display: flex;
     gap: 30px;
     margin-bottom: 30px;
@@ -176,7 +172,7 @@ a .profil_btn{
     min-width: 100%;
 }
 
-.card-event{
+.card-event {
     margin-bottom: 2rem;
     border: 1px solid #400521;
     border-radius: 10px;
@@ -184,7 +180,7 @@ a .profil_btn{
     position: relative;
 }
 
-.pfp-event-card{
+.pfp-event-card {
     width: 48px;
     height: 48px;
     background-size: cover;
@@ -196,11 +192,11 @@ a .profil_btn{
     right: 10px;
 }
 
-.titre-event{
+.titre-event {
     margin: 0 15px 0 0;
 }
 
-.pastille-theme{
+.pastille-theme {
     display: flex;
     padding: 4px 20px;
     align-items: center;
@@ -209,49 +205,49 @@ a .profil_btn{
     width: fit-content;
 }
 
-.rond{
+.rond {
     width: 12px;
     height: 12px;
     border-radius: 50%;
     margin-right: 8px;
 }
 
-.rouge{
+.rouge {
     background-color: #b94949;
 }
 
-.bleu{
+.bleu {
     background-color: #5d90c6;
 }
 
-.jaune{
+.jaune {
     background-color: #c3ab65;
 }
 
-.marine{
+.marine {
     background-color: #5a8f88;
 }
 
-.date{
+.date {
     margin-right: 15px;
 }
 
-.desc-event{
+.desc-event {
     margin-bottom: 15px !important;
 }
 
-.btn-gestion-container{
+.btn-gestion-container {
     display: flex;
     margin-top: 10px;
 }
 
 .participants-container,
-.deconnexion-container{
+.deconnexion-container {
     display: flex;
     justify-content: right;
 }
 
-.deco-btn{
+.deco-btn {
     width: fit-content;
     background-color: #700a36;
     padding: 12px;
@@ -262,24 +258,41 @@ a .profil_btn{
     cursor: pointer;
 }
 
-.deco-btn:hover{
+.deco-btn:hover {
     background-color: #400521;
     outline: 1px solid #700a36;
     box-shadow: 0 0 8px #700a369a;
 }
 
-.participants{
+.participants {
     border: 1px solid #400521;
     padding: 8px;
     width: fit-content;
 }
 
-.card-event h4{
+.card-event h4 {
     margin-bottom: 0;
 }
 
-.pfp-cliquable{
+.pfp-cliquable {
     cursor: pointer;
+}
+
+.btn-inscrit{
+    padding: 12px;
+    background-color: #fff;
+    transition: outline-color 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #000;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    color: #400521;
+    margin-right: 15px;
+}
+
+.btn-inscrit:hover{
+    outline: 1px solid #700a36;
+    box-shadow: 0 0 8px #700a369a;
 }
 
 @media(min-width: 769px) {
@@ -287,20 +300,16 @@ a .profil_btn{
         width: 128px;
         height: 128px;
     }
-    
-    .img-container{
+    .img-container {
         margin-bottom: 5rem;
     }
-    
-    .container{
+    .container {
         width: 80%;
     }
-    
-    .container_info{
+    .container_info {
         width: 70%;
     }
-
-    .pfp-event-card{
+    .pfp-event-card {
         width: 64px;
         height: 64px;
         top: 15px;
@@ -308,12 +317,11 @@ a .profil_btn{
     }
 }
 
-@media(min-width:1280px){
+@media(min-width:1280px) {
     .container {
         width: 60%;
     }
-
-    .container_info{
+    .container_info {
         width: 50%;
     }
 }
