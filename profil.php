@@ -76,6 +76,7 @@ if (isset($_GET['id_user'])) {
     <body>
         <div class="container">
             <div class="profil-container">
+                <a href="./" class="arrow"><i class="fa-solid fa-angle-left fa-3x"></i></a>
                 <div class="form-container">
                     <div class="img-container" id="img-container">
                         <?php

@@ -7,6 +7,13 @@ body {
     margin: 0;
     font-family: 'Barlow Semi Condensed', sans-serif;
     overflow: hidden;
+    flex-direction: column;
+}
+
+header{
+    display: flex;
+    justify-content: center;
+    margin-top: 1.5rem;
 }
 
 h1 a {
@@ -162,4 +169,10 @@ h1 a {
 
 .lien a:hover {
     color: #400521;
+}
+
+@media (max-width :1280px) {
+    .ripple-background{
+        display: none !important;
+    }
 }

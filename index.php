@@ -31,9 +31,9 @@ foreach($result as $row){
     <link rel="icon" href="./assets/favicon.ico" type="image/x-icon">
 </head>
 <body>
+    <a href="evenement.html" class="croix"><i class="fa-solid fa-plus" style="font-size: 45px;"></i></a>
     <header>
-        <a href="evenement.html" class="croix"><i class="fa-solid fa-plus" style="font-size: 45px;"></i></a>
-        <h1><a href="./">UpEvent</a></h1>
+        <a href="./"><img src="./assets/UPEVENT_invert-RBG.png"></a>
     </header>
 
 <?php

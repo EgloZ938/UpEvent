@@ -212,6 +212,14 @@ label{
     width: fit-content;
 }
 
+a.arrow {
+    position: absolute;
+    color: inherit;
+    text-decoration: none;
+    top: 15px;
+    left: 15px;
+}
+
 @media(min-width: 769px) {
     
     .container {

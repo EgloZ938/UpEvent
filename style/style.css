@@ -5,6 +5,12 @@ body {
     padding: 0;
 }
 
+header{
+    display: flex;
+    justify-content: center;
+    margin: 1.5rem 0;
+}
+
 .title_eventForm{
     color: #700A36;
 }
@@ -26,9 +32,11 @@ body {
 }
 
 a.arrow {
+    position: absolute;
     color: inherit;
     text-decoration: none;
-    margin-left: 5%;
+    top: 5px;
+    left: 5px;
 }
 
 .container {

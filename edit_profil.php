@@ -46,6 +46,7 @@ foreach($result as $row){
         <div class="container">
             <div class="form-grip">
                 <div class="form-container">
+                    <a href="./profil.php" class="arrow"><i class="fa-solid fa-angle-left fa-3x"></i></a>
                     <form method="post" id="formulaire-img" enctype="multipart/form-data" action="./php/modif_pdp.php">
                         <div class="img-container" id="img-container" style="cursor: pointer;">
                             <?php
