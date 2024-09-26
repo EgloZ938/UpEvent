@@ -8,10 +8,23 @@ body {
     font-size: 1.6rem;
 }
 
+.c-1 {
+    color: #400521;
+}
 
-/* Card */
+.c-2 {
+    color: #700a36;
+}
 
-.container {
+.f {
+    display: flex;
+}
+
+.j-c {
+    justify-content: center;
+}
+
+/* .container {
     display: flex;
     align-items: normal;
     width: 100%;
@@ -26,17 +39,22 @@ body {
     box-sizing: border-box;
     flex-wrap: wrap;
     background-color: white;
-    /* animation */
+
     transition-duration: 200ms;
     transition-property: transform, box-shadow;
     transition-timing-function: ease-out;
     animation: popInCard 0.5s;
+} */
+
+.container {
+    width: 95%;
+    margin: 0 auto;
 }
 
-.container:hover {
+/* .container:hover {
     transition-duration: 120ms;
     box-shadow: 0 5px 20px 5px #00000044;
-}
+} */
 
 .text-container {
     flex-direction: column;
@@ -53,34 +71,6 @@ body {
     flex-shrink: 0;
 }
 
-.title {
-    margin: 0;
-    min-width: 0;
-    margin-right: 100px;
-    margin-top: -20px;
-    max-width: 100%;
-    white-space: normal;
-    overflow-wrap: break-word;
-    flex: 1 1 auto;
-}
-
-.description {
-    text-align: left;
-}
-
-.info-container {
-    display: flex;
-    flex-direction: column;
-    margin-top: 10%;
-    margin-right: 50%;
-}
-
-.inscription {
-    display: flex;
-    margin-right: 50%;
-    margin-top: 5%;
-}
-
 .nb-container {
     display: flex;
     flex-direction: row;
@@ -91,83 +81,6 @@ body {
     margin-top: -20px;
     flex-wrap: nowrap;
 }
-
-
-/* Titre */
-
-h2 {
-    text-align: center;
-    color: #333;
-    margin-bottom: 20px;
-}
-
-label {
-    display: block;
-    margin-top: 15px;
-    font-weight: bold;
-    color: #555;
-}
-
-input[type="text"],
-textarea,
-input[type="date"] {
-    width: 95%;
-    padding: 10px;
-    margin-top: 5px;
-    margin-right: 30px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    text-align: center;
-}
-
-textarea {
-    resize: vertical;
-    height: 100px;
-}
-
-img {
-    max-width: 100%;
-    height: auto;
-}
-
-
-/* Icones cliquables */
-
-.button-group {
-    display: flex;
-    /* Utilisation de Flexbox pour aligner les boutons */
-    justify-content: space-between;
-    /* Espace entre les boutons */
-    margin-top: 10px;
-    /* Espace au-dessus des boutons */
-    margin-right: 20px;
-}
-
-.button {
-    flex: 1;
-    /* Prend tout l'espace disponible */
-    margin: 0 5px;
-    /* Espace entre les boutons */
-    padding: 10px;
-    border-radius: 20px;
-    /* Coins arrondis */
-    border: none;
-    /* Pas de bordure */
-    color: white;
-    /* Couleur du texte */
-    cursor: pointer;
-    /* Curseur en forme de main */
-    display: flex;
-    align-items: center;
-    /* Centre le contenu verticalement */
-    justify-content: center;
-    /* Centre le contenu horizontalement */
-    transition: transform 0.3s;
-    /* Transition pour l'animation */
-}
-
-
-/* Couleurs des boutons */
 
 .sport {
     background-color: #b94949;
@@ -195,32 +108,139 @@ img {
 }
 
 
-/* Bouton Soumettre */
+.card-event {
+    margin-bottom: 2rem;
+    border: 1px solid #400521;
+    border-radius: 10px;
+    padding: 1rem;
+    position: relative;
 
-.submit-btn {
-    display: block;
-    width: 30%;
-    padding: 10px;
-    background-color: #700A36;
-    color: white;
-    border: none;
-    border-radius: 50px;
+    transition-duration: 200ms;
+    transition-property: transform, box-shadow;
+    transition-timing-function: ease-out;
+    animation: popInCard 0.5s;
+}
+
+.card-event:hover{
+    transition-duration: 120ms;
+    box-shadow: 0 5px 20px 5px #00000044;
+    border: 1px solid #40052134;
+}
+
+.pfp-event-card {
+    width: 48px;
+    height: 48px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.titre-event {
+    margin: 0 15px 0 0;
+}
+
+.pastille-theme {
+    display: flex;
+    padding: 4px 20px;
+    align-items: center;
+    border: 1px solid #000;
+    border-radius: 20px;
+    width: fit-content;
+}
+
+.rond {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-right: 8px;
+}
+
+.rouge {
+    background-color: #b94949;
+}
+
+.bleu {
+    background-color: #5d90c6;
+}
+
+.jaune {
+    background-color: #c3ab65;
+}
+
+.marine {
+    background-color: #5a8f88;
+}
+
+.date {
+    margin-right: 15px;
+}
+
+.desc-event {
+    margin-bottom: 15px !important;
+}
+
+.btn-gestion-container {
+    display: flex;
+    margin-top: 10px;
+}
+
+.participants-container,
+.deconnexion-container {
+    display: flex;
+    justify-content: right;
+}
+
+.deco-btn {
+    width: fit-content;
+    background-color: #700a36;
+    padding: 12px;
+    transition: outline-color 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    color: #fff;
     cursor: pointer;
-    margin: 0 auto;
-    margin-top: 12px;
-    width: 150px;
-    height: 50px;
 }
 
-.submit-btn:hover {
-    background-color: #31723f;
+.deco-btn:hover {
+    background-color: #400521;
+    outline: 1px solid #700a36;
+    box-shadow: 0 0 8px #700a369a;
 }
 
+.participants {
+    border: 1px solid #400521;
+    padding: 8px;
+    width: fit-content;
+}
 
-/* Croix retour */
+.card-event h4 {
+    margin-bottom: 0;
+}
 
+.pfp-cliquable {
+    cursor: pointer;
+}
 
-/* Animation Croix */
+.btn-inscrit{
+    padding: 12px;
+    background-color: #fff;
+    transition: outline-color 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #000;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    color: #400521;
+    margin-right: 15px;
+}
+
+.btn-inscrit:hover{
+    outline: 1px solid #700a36;
+    box-shadow: 0 0 8px #700a369a;
+}
 
 @keyframes popIn {
     0% {
@@ -233,9 +253,6 @@ img {
         transform: scale(100%);
     }
 }
-
-
-/* Animation pop */
 
 @keyframes popInCard {
     0% {
@@ -250,9 +267,6 @@ img {
         transform: scale(100%);
     }
 }
-
-
-/**/
 
 a.croix {
     color: inherit;
@@ -269,9 +283,6 @@ a.croix i:hover {
     transform: rotate(180deg);
     transition: transform 300ms;
 }
-
-
-/**/
 
 h1 a {
     top: 2%;
@@ -349,9 +360,6 @@ h1 a {
     background-color: #fff;
 }
 
-
-/** mobile */
-
 @media (min-width: 769px) {
     .buttons-container {
         display: flex;
@@ -359,6 +367,22 @@ h1 a {
     .mobile-menu-button,
     .mobile-menu {
         display: none;
+    }
+
+    .img-container {
+        margin-bottom: 5rem;
+    }
+    .container {
+        width: 80%;
+    }
+    .container_info {
+        width: 70%;
+    }
+    .pfp-event-card {
+        width: 64px;
+        height: 64px;
+        top: 15px;
+        right: 15px;
     }
 }
 
@@ -391,5 +415,23 @@ h1 a {
         display: flex;
         flex-direction: column;
         gap: 10px;
+    }
+}
+
+@media (min-width :1280px) {
+    .container {
+        width: 60%;
+    }
+    .container_info {
+        width: 50%;
+    }
+}
+
+@media (max-width :375px){
+    .flex-container-titre{
+        flex-direction: column;
+    }
+    .pastille-theme{
+        margin-top: 15px;
     }
 }

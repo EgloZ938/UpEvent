@@ -1,4 +1,3 @@
-
 <?php
 require_once("./db/MyPDO.php");
 session_start();
@@ -8,7 +7,6 @@ if($_SESSION["id"]){
 
 $data = [
     'id' => $id_user
-
 ];
 
 $query = "SELECT * FROM utilisateur WHERE id = :id";
@@ -29,95 +27,14 @@ foreach($result as $row){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Main page </title>
     <link rel="stylesheet" href="./style/home.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <!-- Animation CSS -->
-    <style>
-        .circle {
-            position: absolute;
-            border-radius: 50%;
-            background: #700A36;
-            animation: ripple 15s infinite;
-            box-shadow: 0px 0px 1px 0px #7bb3d8;
-        }
-        
-        .small {
-            width: 300px;
-            height: 300px;
-            left: -100px;
-            bottom: -100px;
-        }
-        
-        .medium {
-            width: 500px;
-            height: 500px;
-            left: -200px;
-            bottom: -200px;
-        }
-        
-        .large {
-            width: 700px;
-            height: 700px;
-            left: -300px;
-            bottom: -300px;
-        }
-        
-        .xlarge {
-            width: 900px;
-            height: 900px;
-            left: -400px;
-            bottom: -400px;
-        }
-        
-        .xxlarge {
-            width: 1100px;
-            height: 1100px;
-            left: -500px;
-            bottom: -500px;
-        }
-        
-        .shade1 {
-            opacity: 0.2;
-        }
-        
-        .shade2 {
-            opacity: 0.5;
-        }
-        
-        .shade3 {
-            opacity: 0.7;
-        }
-        
-        .shade4 {
-            opacity: 0.8;
-        }
-        
-        .shade5 {
-            opacity: 0.9;
-        }
-
-        .ripple-background {
-            z-index: -100;
-        }
-
-        @keyframes ripple {
-            0% {
-                transform: scale(0.8);
-            }
-            50% {
-                transform: scale(1.2);
-            }
-            100% {
-                transform: scale(0.8);
-            }
-        }
-    </style>
-    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">    
 </head>
 <body>
     <header>
-<a href="evenement.html" class="croix"><i class="fa-solid fa-plus" style="font-size: 45px;"></i></a>
+        <a href="evenement.html" class="croix"><i class="fa-solid fa-plus" style="font-size: 45px;"></i></a>
+        <h1><a href="./">UpEvent</a></h1>
+    </header>
 
-<h1><a href="./">UpEvent</a></h1>
 <?php
     if($_SESSION["id"]){
         if($img == ''){
@@ -145,7 +62,10 @@ foreach($result as $row){
             <a class="button button-login" href="./connexion.html">Connexion</a>
         </div>
         <?php
-    }    
+    }
+?>
+<div class="container">
+    <?php
     $query = "SELECT * FROM evenement";
     $statement = MyPDO::getInstance()->prepare($query);
     $statement->execute();
@@ -166,81 +86,99 @@ foreach($result as $row){
             $finis = $row["finis"];
             $id_user_owner = $row["id_user_owner"];
         
+            if($theme == "Sport"){
+                $class_theme = "rouge";
+            }
+            elseif($theme == "Divertissement"){
+                $class_theme = "jaune";
+            }
+            elseif($theme == "Travail"){
+                $class_theme = "bleu";
+            }
+            else{
+                $class_theme = "marine";
+            }
+
+            $data2 = [
+                'id_user_owner' => $id_user_owner
+            ];
+
+            $query2 = "SELECT * FROM utilisateur WHERE id = :id_user_owner";
+            $statement2 = MyPDO::getInstance()->prepare($query2);
+            $statement2->execute($data2);
+            $result2 = $statement2->FetchAll();
+
+            foreach($result2 as $row2){
+                $img_owner = $row2["pdp"];
+            }
+            ?>
+            <div class="card-event">
+            <?php
+                if($img_owner == ''){
+                    ?>
+                    <div class="pfp-event-card pfp-cliquable" style="background-image: url('./assets/avatar_default.png');" data-target="<?php echo $id_user_owner ?>"></div>
+                    <?php
+                } else {
+                    ?>
+                    <div class="pfp-event-card pfp-cliquable" style="background-image: url('<?php echo $img_owner ?>');" data-target="<?php echo $id_user_owner ?>"></div>
+                    <?php
+                }
+                ?>
+                <div class="f a-i flex-container-titre">
+                    <h2 class="titre-event"><?php echo $titre ?></h2>
+                    <div class="pastille-theme">
+                        <div class="rond <?php echo $class_theme ?>"></div>
+                        <div class="theme" data-target="id_event"><?php echo $theme ?></div>
+                    </div>
+                </div>
+                <h4 class="adresse-event"><?php echo $lieu ?></h4>
+                <div class="date-heure-container f a-i">
+                    <h4 class="date">Date : <span class="c-2"><?php echo $date ?></span></h4>
+                    <h4 class="heure">Heure : <span class="c-2"><?php echo $heure ?></span></h4>
+                </div>
+                <h4 class="desc-event"><?php echo $description ?></h4>
+                <div class="participants-container">
+                    <div class="participants">Participants : <?php echo $nbr_inscrit ?> / <span class="c-2"><?php echo $nbr_participants ?></span></div>
+                </div>
+                <?php 
+
+                    $data3 = [
+                        'id_user' => $id_user,
+                        'id_event' => $id
+                    ];
+
+                    $query3 = "SELECT * FROM inscrit WHERE id_user = :id_user AND id_evenement = :id_event";
+                    $statement3 = MyPDO::getInstance()->prepare($query3);
+                    $statement3->execute($data3);
+                    $result3 = $statement3->FetchAll();
+                    $nbr_resultat2 = $statement3->rowCount();
+
+                    if($nbr_resultat2 < 1){
+                        ?>
+                        <div class="btn-gestion-container">
+                            <div class="inscrire-btn btn-inscrit" id="inscrire-btn" data-id-event="<?php echo $id ?>">M'inscrire</div>
+                        </div>
+                        <?php
+                    }
+                    else{
+                        ?>
+                        <div class="btn-gestion-container">
+                            <div class="desinscrire-btn btn-inscrit" id="desinscrire-btn" data-id-event="<?php echo $id ?>">Me désinscrire</div>
+                        </div>
+                        <?php
+                    }
+                ?>
+        </div>
+        <?php 
+        }
         ?>
-    <div class="event">
-        <h2><?php echo htmlspecialchars($titre); ?></h2>
-        <p><strong>Thème :</strong> <?php echo htmlspecialchars($theme); ?></p>
-        <p><strong>Lieu :</strong> <?php echo htmlspecialchars($lieu); ?></p>
-        <p><strong>Description :</strong> <?php echo htmlspecialchars($description); ?></p>
-        <p><strong>Date :</strong> <?php echo htmlspecialchars($date); ?></p>
-        <p><strong>Heure :</strong> <?php echo htmlspecialchars($heure); ?></p>
-        <p><strong>Nombre de participants :</strong> <?php echo htmlspecialchars($nbr_participants); ?></p>
-        <p><strong>Nombre d'inscrits :</strong> <?php echo htmlspecialchars($nbr_inscrit); ?></p>
-        <p><strong>Organisateur :</strong> <?php echo htmlspecialchars($id_user_owner); ?></p>
-    </div>
-    <hr>
-    <?php
-}
+        </div>
+        <?php
     }
     else {
-    
         echo "<p>Aucun événement disponible pour le moment.</p>";
     }
 ?>
-</header>
-
-<div class="ripple-background">
-        <div class="circle xxlarge shade1"></div>
-        <div class="circle xlarge shade2"></div>
-        <div class="circle large shade3"></div>
-        <div class="circle medium shade4"></div>
-        <div class="circle small shade5"></div>
-</div>
-
-
-
-<div class="container">
-    <img src="icons/" class="icon"/>
-        <div class="text-container">
-            <!-- Titre -->
-            <h2 class="title">Titre Variable</h2>
-            <!-- Image -->
-            <img src="assets/avatar_default.png" class="pdp"/>
-            <!-- Description -->
-            <label class="description">Description<br>Pouvant prendre<br>plusieurs <br> lignes</label>
-        </div>  
-
-        <div class="info-container">
-            <!--Lieu-->
-            <label class="lieu">Lieu :</label>
-            <!--Date-->
-            <label class="date">Date :</label>
-        </div>
-
-        <button type="button" class="inscription">S'inscrire</button>
-        <div class="nb-container">
-            <label class="personnes">3 / 5</label>
-            <i class="fa-solid fa-person"></i>
-        </div>
-</div>
-
-
-            <!--Script de sélection de bouton + changement de couleur -->
-            <script>
-                function selectEventType(button) {
-                    // Enlève la classe "selected" de tous les boutons
-                    const buttons = document.querySelectorAll('.button');
-                    buttons.forEach(btn => {
-                        btn.classList.remove('selected');
-                        // Réinitialise la couleur des boutons
-                        btn.style.backgroundColor = ""; // Réinitialise la couleur de fond
-                    });
-
-                    // Ajoute la classe "selected" et change la couleur de fond du bouton cliqué
-                    button.classList.add('selected');
-                    button.style.backgroundColor = "#700A36";
-                }
-            </script>
 <script src="./script/app.js"></script>
 </body>
 </html>
