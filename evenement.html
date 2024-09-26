@@ -9,26 +9,12 @@
     <link rel="stylesheet" href="style/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <a href="index.php" class="arrow"><i class="fa-solid fa-angle-left fa-3x"></i></a>
-    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
 </head>
 
 <body>
-
-    <head>
-        <h1><a href="./">UpEvent</a></h1>
-    </head>
-
-    <div class="ripple-background">
-        <div class="circle xxlarge shade1"></div>
-        <div class="circle xlarge shade2"></div>
-        <div class="circle large shade3"></div>
-        <div class="circle medium shade4"></div>
-        <div class="circle small shade5"></div>
-    </div>
-
     <div class="container">
 
-        <h2>Créer un Événement</h2>
+        <h2 class="title_eventForm">Créer un Événement</h2>
         <form id="formulaire" method="post">
 
             <input type="hidden" name="categorie" id="categorie-value">
@@ -42,12 +28,33 @@
 
             <!--Catégorie-->
             <label for="categorie" style="text-align: center">Catégorie</label>
-            <div class="button-group">
-                <button type="button" class="button sport" onclick="selectEventType(this)">Sport</button>
-                <button type="button" class="button work" onclick="selectEventType(this)">Travail</button>
-                <button type="button" class="button entertainment" onclick="selectEventType(this)">Divertissement</button>
-                <button type="button" class="button other" onclick="selectEventType(this)">Autre</button>
-            </div>
+            <!-- <div class="pastille-theme">
+                <button type="button" class="rouge" onclick="selectEventType(this)">Sport</button>
+                <button type="button" class="bleu" onclick="selectEventType(this)">Travail</button>
+                <button type="button" class="jaune"
+                    onclick="selectEventType(this)">Divertissement</button>
+                <button type="button" class="marine" onclick="selectEventType(this)">Autre</button>
+            </div> -->
+
+                <div class="pastille-theme">
+                <div class="rond rouge"></div>
+                <div type="button" class="theme" onclick="selectEventType(this)" data-target="id_event">SPORT</div>
+                </div>
+
+                <div class="pastille-theme">
+                <div class="rond bleu"></div>
+                <div type="button" class="theme" onclick="selectEventType(this)" data-target="id_event">TRAVAIL</div>
+                </div>
+
+                <div class="pastille-theme">
+                <div class="rond jaune"></div>
+                <div type="button" class="theme" onclick="selectEventType(this)" data-target="id_event">DIVERTISSEMENT</div>
+                </div>
+
+                <div class="pastille-theme">
+                <div class="rond marine"></div>
+                <div type="button" class="theme" onclick="selectEventType(this)" data-target="id_event">AUTRE</div>
+                </div>
 
             <!-- Lieu -->
             <label for="location">Lieu</label>
@@ -55,7 +62,7 @@
 
             <!-- Date -->
             <label for="date">Date</label>
-            <input type="date" id="date" name="date" required class="custom-date">
+            <input type="date" id="date" name="date" required>
 
             <!-- heure -->
             <label for="heure">Heure</label>

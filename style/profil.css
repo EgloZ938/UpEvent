@@ -44,6 +44,10 @@ body{
     justify-content: center;
 }
 
+.a-i{
+    align-items: center;
+}
+
 .error-form {
     color: red;
     display: none;
@@ -71,7 +75,7 @@ body{
     text-align: center;
 }
 
-.edit_profil_btn{
+.profil_btn{
     position: absolute;
     top: 10px;
     right: 10px;
@@ -80,17 +84,52 @@ body{
     transition: outline-color 0.3s ease, box-shadow 0.3s ease;
     border: 1px solid #fff;
     border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
 }
 
-.edit_profil_btn:hover{
+.profil_btn:hover{
     background-color: #400521;
     outline: 1px solid #700a36;
     box-shadow: 0 0 8px #700a369a;
 }
 
-a .edit_profil_btn{
+a .profil_btn{
     color: #fff;
     text-decoration: none;
+}
+
+.modif-btn{
+    padding: 12px;
+    background-color: #fff;
+    transition: outline-color 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #000;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    color: #400521;
+    margin-right: 15px;
+}
+
+.modif-btn:hover{
+    outline: 1px solid #700a36;
+    box-shadow: 0 0 8px #700a369a;
+}
+
+.suppr-btn{
+    padding: 12px;
+    background-color: #fff;
+    transition: outline-color 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #000;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    color: #400521;
+}
+
+.suppr-btn:hover{
+    outline: 1px solid #700a36;
+    box-shadow: 0 0 8px #700a369a;
 }
 
 .container_info{
@@ -137,6 +176,112 @@ a .edit_profil_btn{
     min-width: 100%;
 }
 
+.card-event{
+    margin-bottom: 2rem;
+    border: 1px solid #400521;
+    border-radius: 10px;
+    padding: 1rem;
+    position: relative;
+}
+
+.pfp-event-card{
+    width: 48px;
+    height: 48px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.titre-event{
+    margin: 0 15px 0 0;
+}
+
+.pastille-theme{
+    display: flex;
+    padding: 4px 20px;
+    align-items: center;
+    border: 1px solid #000;
+    border-radius: 20px;
+    width: fit-content;
+}
+
+.rond{
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-right: 8px;
+}
+
+.rouge{
+    background-color: #b94949;
+}
+
+.bleu{
+    background-color: #5d90c6;
+}
+
+.jaune{
+    background-color: #c3ab65;
+}
+
+.marine{
+    background-color: #5a8f88;
+}
+
+.date{
+    margin-right: 15px;
+}
+
+.desc-event{
+    margin-bottom: 15px !important;
+}
+
+.btn-gestion-container{
+    display: flex;
+    margin-top: 10px;
+}
+
+.participants-container,
+.deconnexion-container{
+    display: flex;
+    justify-content: right;
+}
+
+.deco-btn{
+    width: fit-content;
+    background-color: #700a36;
+    padding: 12px;
+    transition: outline-color 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.deco-btn:hover{
+    background-color: #400521;
+    outline: 1px solid #700a36;
+    box-shadow: 0 0 8px #700a369a;
+}
+
+.participants{
+    border: 1px solid #400521;
+    padding: 8px;
+    width: fit-content;
+}
+
+.card-event h4{
+    margin-bottom: 0;
+}
+
+.pfp-cliquable{
+    cursor: pointer;
+}
+
 @media(min-width: 769px) {
     .profil {
         width: 128px;
@@ -153,6 +298,13 @@ a .edit_profil_btn{
     
     .container_info{
         width: 70%;
+    }
+
+    .pfp-event-card{
+        width: 64px;
+        height: 64px;
+        top: 15px;
+        right: 15px;
     }
 }
 

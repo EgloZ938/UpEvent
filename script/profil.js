@@ -1,61 +1,79 @@
-document.getElementById("formulaire").addEventListener("submit", (e) =>{
-    e.preventDefault();
-    let prenom = document.getElementById("prenom").value;
-    let nom = document.getElementById("nom").value;
-    let email = document.getElementById("email").value;
-    let bio = document.getElementById("bio").value;
-    let campus = document.getElementById("campus").value;
+if(document.getElementsByClassName("pfp-cliquable")){
+    let tabPfp = document.getElementsByClassName("pfp-cliquable");
+    
+    for (let i = 0; i < tabPfp.length; i++) {
+        tabPfp[i].addEventListener("click", (e) => {
+            let dataTarget = e.currentTarget.getAttribute('data-target');
+            location.href = `./profil.php?id_user=${dataTarget}`;
+        });
+    }
+}
 
-    let instagram = document.getElementById("instagram").value || '';
-    let linkedin = document.getElementById("linkedin").value || '';
-    let twitter = document.getElementById("twitter").value || '';
-    let discord = document.getElementById("discord").value || '';
+if(document.getElementsByClassName("suppr-btn")){
+    let tabSupprBtn = document.getElementsByClassName("suppr-btn");
 
-    let reseaux = {
-        instagram: instagram,
-        linkedin: linkedin,
-        twitter: twitter,
-        discord: discord
-    };
-
-    let reseauxJson = JSON.stringify(reseaux);
-
-    let formdata = new FormData();
-    formdata.append("prenom", prenom);
-    formdata.append("nom", nom);
-    formdata.append("email", email);
-    formdata.append("bio", bio);
-    formdata.append("campus", campus);
-    formdata.append("reseaux", reseauxJson);
-    let xhr = new XMLHttpRequest();
-    xhr.open("POST", "./php/modif_info_profil.php", true);
-    xhr.send(formdata);
-    xhr.onreadystatechange = () => {
-        if (xhr.readyState == 4 && xhr.status == 200) {
-            let response = xhr.responseText;
-            if(response == "Les informations ont été mises à jour avec succès."){
-                location.href = "./profil.php";
+    for(let i = 0; i < tabSupprBtn.length; i++){
+        tabSupprBtn[i].addEventListener("click", (e) =>{
+            let dataTarget = e.currentTarget.getAttribute("data-id-event");
+            let formdata = new FormData();
+            formdata.append("id_event", dataTarget);
+            let xhr = new XMLHttpRequest();
+            xhr.open("POST", "./php/remove_event.php", true);
+            xhr.send(formdata);
+            xhr.onreadystatechange = () => {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    let response = xhr.responseText;
+                    if (response == "L'événement et tous ses participants ont été supprimés avec succès.") {
+                        location.reload();
+                    }
+                }
             }
-            else{
-                alert("Echec l'hors de la mise à jour des informations");
+        })
+    }
+}
+
+if(document.getElementsByClassName("modif-btn")){
+    let tabModifBtn = document.getElementsByClassName("modif-btn");
+
+    for(let i = 0; i < tabModifBtn.length; i++){
+        let dataTarget = e.currentTarget.getAttribute("data-id-event");
+    }
+}
+
+if (document.getElementById("like-btn")) {
+    document.getElementById("like-btn").addEventListener("click", (e) => {
+        let id_user_profil = e.currentTarget.getAttribute('data-id-profil');
+        let formdata = new FormData();
+        formdata.append("id_user_liked", id_user_profil);
+        let xhr = new XMLHttpRequest();
+        xhr.open("POST", "./php/add_like.php", true);
+        xhr.send(formdata);
+        xhr.onreadystatechange = () => {
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                let response = xhr.responseText;
+                if (response == "like ajouté") {
+                    location.reload();
+                }
             }
         }
-    }
-})
+    })
+}
 
-document.getElementById("img-container").addEventListener("click", function() {
-    document.getElementById("pdp").click();
-});
-
-document.getElementById("pdp").addEventListener("change", function(event) {
-    if(event.target.files && event.target.files[0]) {
-        let reader = new FileReader();
-
-        reader.onload = function(e) {
-            document.getElementById("profil").style.backgroundImage = `url(${e.target.result})`;
+if (document.getElementById("dislike-btn")) {
+    document.getElementById("dislike-btn").addEventListener("click", (e) =>{
+        let id_user_profil = e.currentTarget.getAttribute('data-id-profil');
+        let formdata = new FormData();
+        formdata.append("id_user_liked", id_user_profil);
+        let xhr = new XMLHttpRequest();
+        xhr.open("POST", "./php/remove_like.php", true);
+        xhr.send(formdata);
+        xhr.onreadystatechange = () => {
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                let response = xhr.responseText;
+                if (response == "like supprimé") {
+                    location.reload();
+                }
+            }
         }
-        reader.readAsDataURL(event.target.files[0]);
-
-        document.getElementById("submit-img-container").style.display = "flex";
-    }
-});
+    })
+}

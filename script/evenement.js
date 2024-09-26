@@ -37,6 +37,9 @@ document.getElementById("formulaire").addEventListener("submit", (e) =>{
         if (xhr.readyState == 4 && xhr.status == 200) {
             let response = xhr.responseText;
             console.log(response);
+            if(response == "réussite"){
+                location.href = "./";
+            }
         }
     }
 })
