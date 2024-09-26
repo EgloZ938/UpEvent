@@ -133,8 +133,18 @@ if (isset($_GET['id_user'])) {
                             }
                         ?>
                     </div>
-
-                    <h2 class="c-2">Mes évenements : </h2>
+                    <?php
+                    if($peutDeco){
+                        ?>
+                        <h2 class="c-2">Mes évenements : </h2>
+                        <?php
+                    }
+                    else{
+                        ?>
+                        <h2 class="c-2">Évènements de <?php echo $prenom ?> : </h2>
+                        <?php
+                    }
+                    ?>
                     <?php
                         $query2 = "SELECT * FROM evenement WHERE id_user_owner = :id";
                         $statement2 = MyPDO::getInstance()->prepare($query2);
@@ -150,7 +160,18 @@ if (isset($_GET['id_user'])) {
                         if($event == false){
                             ?>
                             <div class="card-event">
-                                <h3>Vous n'avez pas créé d'évènements en cours...</h3>
+                                <?php
+                                    if($peutDeco == true){
+                                        ?>
+                                        <h3>Vous n'avez pas crée d'évènements en cours...</h3>
+                                        <?php
+                                    }
+                                    else{
+                                        ?>
+                                        <h3><?php echo $prenom ?> n'a pas créé d'évènements en cours...</h3>
+                                        <?php
+                                    }
+                                    ?>
                             </div>
                             <?php
                         }
@@ -218,12 +239,52 @@ if (isset($_GET['id_user'])) {
                                     <?php
                                 }
                                 ?>
+                                <?php 
+                                    if($peutDeco != true){
+                                        $data5 = [
+                                            'id_user' => $id_user,
+                                            'id_event' => $id_event
+                                        ];
+    
+                                        $query7 = "SELECT * FROM inscrit WHERE id_user = :id_user AND id_evenement = :id_event";
+                                        $statement7 = MyPDO::getInstance()->prepare($query7);
+                                        $statement7->execute($data5);
+                                        $result6 = $statement7->FetchAll();
+                                        $nbr_resultat3 = $statement7->rowCount();
+
+                                        if($nbr_resultat3 < 1){
+                                            ?>
+                                            <div class="btn-gestion-container">
+                                                <div class="inscrire-btn btn-inscrit" data-id-event="<?php echo $id_event ?>">M'inscrire</div>
+                                            </div>
+                                            <?php
+                                        }
+                                        else{
+                                            ?>
+                                            <div class="btn-gestion-container">
+                                                <div class="desinscrire-btn btn-inscrit" data-id-event="<?php echo $id_event ?>">Me désinscrire</div>
+                                            </div>
+                                            <?php
+                                        }
+                                    }
+                                ?>
                         </div>
                             <?php
                             }
                         }
                     ?>
-                    <h2 class="c-2">Je participe à :</h2>
+                    <?php
+                        if($peutDeco == true){
+                            ?>
+                            <h2 class="c-2">Je participe à :</h2>
+                            <?php
+                        }
+                        else{
+                            ?>
+                            <h2 class="c-2"><?php echo $prenom ?> participe à :</h2>
+                            <?php
+                        }
+                        ?>
                     <?php
                         $query3 = "SELECT * FROM inscrit WHERE id_user = :id";
                         $statement3 = MyPDO::getInstance()->prepare($query3);
@@ -234,7 +295,18 @@ if (isset($_GET['id_user'])) {
                         if($nbr_resultat2 < 1){
                             ?>
                                 <div class="card-event">
-                                    <h3>Vous n'êtes inscrit à aucun évènement...</h3>
+                                    <?php
+                                    if($peutDeco == true){
+                                        ?>
+                                        <h3>Vous n'êtes inscrit à aucun évènement...</h3>
+                                        <?php
+                                    }
+                                    else{
+                                        ?>
+                                        <h3><?php echo $prenom ?> n'est inscrit à aucun évènement...</h3>
+                                        <?php
+                                    }
+                                    ?>
                                 </div>
                             <?php
                         }
