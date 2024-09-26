@@ -1,20 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed&display=swap');
-
-body{
-    height: 100vh; 
+body {
+    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     margin: 0;
     font-family: 'Barlow Semi Condensed', sans-serif;
+    overflow: hidden;
 }
 
-h1 a{
-    top:2%;
-    left: 50%; 
+h1 a {
+    top: 2%;
+    left: 50%;
     transform: translateX(-50%);
     position: fixed;
-    text-decoration: none;  
+    text-decoration: none;
     color: black;
 }
 
@@ -54,7 +54,6 @@ h1 a{
     0% {
         transform: rotate(0deg);
     }
-
     100% {
         transform: rotate(360deg);
     }
@@ -145,27 +144,28 @@ h1 a{
     background: #fafafa;
     position: relative;
     border-radius: 10px;
-    box-shadow: 0 5px 10px rgba(0 , 0, 0, 0.2);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
     margin: auto 1rem;
 }
 
-#submit-container{
+#submit-container {
     margin-bottom: 2rem;
 }
 
-.lien{
+.lien {
     text-align: center;
 }
 
-.lien a{
+.lien a {
     color: #700a36;
 }
 
-.lien a:hover{
+.lien a:hover {
     color: #400521;
 }
 
-.error-form{
+.error-form {
     color: red;
     display: none;
     text-align: center;
