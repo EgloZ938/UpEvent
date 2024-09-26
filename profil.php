@@ -98,37 +98,7 @@ foreach($result as $row){
                         </div>
                     </div>
 
-                    <h2>Mes évenements : </h2>
-                    
-                    <div class="card-event">
-                        <?php
-                            if($img == ''){
-                                ?>
-                                <div class="pfp-event-card" style="background-image: url('./assets/avatar_default.png');"></div>
-                                <?php
-                            } else {
-                                ?>
-                                <div class="pfp-event-card" style="background-image: url('<?php echo $img ?>');"></div>
-                                <?php
-                            }
-                        ?>
-                        <div class="f a-i">
-                            <h2 class="titre-event">Foot in Five</h2>
-                            <div class="pastille-theme">
-                                <div class="rond rouge"></div>
-                                <div class="theme" data-target="id_event">SPORT</div>
-                            </div>
-                        </div>
-                        <h4 class="adresse-event">26 Rue Hélène et François Missoffe</h4>
-                        <div class="date-heure-container f a-i">
-                            <h4 class="date">Date : <span class="c-2">26/09/2024</span></h4>
-                            <h4 class="heure">Heure : <span class="c-2">19h00</span></h4>
-                        </div>
-                        <h4 class="desc-event">Match de foot indoor 5 contre 5, venez nombreux !</h4>
-                        <div class="participants-container">
-                            <div class="participants">Participants : 1 / <span class="c-2">10</span></div>
-                        </div>
-                    </div>
+                    <h2>Mes évenements</h2>
                     <a href="./edit_profil.php"><div class="edit_profil_btn">Editer profil</div></a>
                 </div>
             </div>
