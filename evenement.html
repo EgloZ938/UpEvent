@@ -9,120 +9,14 @@
     <link rel="stylesheet" href="style/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <a href="index.php" class="arrow"><i class="fa-solid fa-angle-left fa-3x"></i></a>
-    <!-- Animation CSS -->
-    <style>
-        .circle {
-            position: absolute;
-            border-radius: 50%;
-            background: #700A36;
-            animation: ripple 15s infinite;
-            box-shadow: 0px 0px 1px 0px #7bb3d8;
-        }
-        
-        .small {
-            width: 300px;
-            height: 300px;
-            /*
-                left: -100px;
-                bottom: -100px;
-                */
-        }
-        
-        .medium {
-            width: 500px;
-            height: 500px;
-            /*
-                left: -200px;
-                bottom: -200px;
-                */
-        }
-        
-        .large {
-            width: 700px;
-            height: 700px;
-            /*
-                left: -300px;
-                bottom: -300px;
-                */
-        }
-        
-        .xlarge {
-            width: 900px;
-            height: 900px;
-            /*
-                left: -400px;
-                bottom: -400px;
-                */
-        }
-        
-        .xxlarge {
-            width: 1100px;
-            height: 1100px;
-            /*
-                left: -500px;
-                bottom: -500px;
-                */
-        }
-        
-        .shade1 {
-            opacity: 0.2;
-        }
-        
-        .shade2 {
-            opacity: 0.5;
-        }
-        
-        .shade3 {
-            opacity: 0.7;
-        }
-        
-        .shade4 {
-            opacity: 0.8;
-        }
-        
-        .shade5 {
-            opacity: 0.9;
-        }
-        
-        .ripple-background {
-            z-index: -100;
-            position: absolute;
-            display: grid;
-            place-items: center;
-            height: 100%;
-            width: 100%;
-            margin: 0;
-            top: 1vh;
-        }
-        
-        @keyframes ripple {
-            0% {
-                transform: scale(0.8);
-            }
-            50% {
-                transform: scale(1.2);
-            }
-            100% {
-                transform: scale(0.8);
-            }
-        }
-    </style>
+    
 </head>
 
 <body>
 
-    <head>
+    <header>
         <h1><a href="./">UpEvent</a></h1>
-    </head>
-
-    <div class="ripple-background">
-        <div class="circle xxlarge shade1"></div>
-        <div class="circle xlarge shade2"></div>
-        <div class="circle large shade3"></div>
-        <div class="circle medium shade4"></div>
-        <div class="circle small shade5"></div>
-    </div>
-
+    </header>
     <div class="container">
 
         <h2 class="title_eventForm">Créer un Événement</h2>
@@ -147,24 +41,24 @@
                 <button type="button" class="marine" onclick="selectEventType(this)">Autre</button>
             </div> -->
 
-                <div class="pastille-theme">
-                <div class="rond rouge"></div>
-                <div type="button" class="theme" onclick="selectEventType(this)" data-target="id_event">SPORT</div>
+                <div class="pastille-theme" onclick="selectEventType(this)" data-target="id_event">
+                    <div class="rond rouge"></div>
+                    <div class="theme">Sport</div>
                 </div>
 
-                <div class="pastille-theme">
-                <div class="rond bleu"></div>
-                <div type="button" class="theme" onclick="selectEventType(this)" data-target="id_event">TRAVAIL</div>
+                <div class="pastille-theme" onclick="selectEventType(this)" data-target="id_event">
+                    <div class="rond bleu"></div>
+                    <div class="theme">Travail</div>
                 </div>
 
-                <div class="pastille-theme">
-                <div class="rond jaune"></div>
-                <div type="button" class="theme" onclick="selectEventType(this)" data-target="id_event">DIVERTISSEMENT</div>
+                <div class="pastille-theme" onclick="selectEventType(this)" data-target="id_event">
+                    <div class="rond jaune"></div>
+                    <div class="theme">Divertissement</div>
                 </div>
 
-                <div class="pastille-theme">
-                <div class="rond marine"></div>
-                <div type="button" class="theme" onclick="selectEventType(this)" data-target="id_event">AUTRE</div>
+                <div class="pastille-theme" onclick="selectEventType(this)" data-target="id_event">
+                    <div class="rond marine"></div>
+                    <div class="theme">Autre</div>
                 </div>
 
             <!-- Lieu -->

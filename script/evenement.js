@@ -1,15 +1,15 @@
 function selectEventType(button) {
     // Enlève la classe "selected" de tous les boutons
-    const buttons = document.querySelectorAll('.button');
+    const buttons = document.querySelectorAll('.pastille-theme');
     buttons.forEach(btn => {
         btn.classList.remove('selected');
         // Réinitialise la couleur des boutons
-        btn.style.backgroundColor = ""; // Réinitialise la couleur de fond
+        btn.style.transform = "scale(1)"; // Réinitialise la couleur de fond
     });
 
     // Ajoute la classe "selected" et change la couleur de fond du bouton cliqué
     button.classList.add('selected');
-    button.style.backgroundColor = "#700A36";
+    button.style.transform = "scale(1.03)";
     document.getElementById("categorie-value").value = button.innerHTML;
 }
 

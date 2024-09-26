@@ -175,6 +175,7 @@ img {
     margin-top: .5rem;
     width: fit-content;
     justify-content: center;
+    cursor: pointer;
 }
 
 .rond{
